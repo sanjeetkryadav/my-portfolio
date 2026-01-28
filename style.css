@@ -287,3 +287,21 @@ body {
         transform: scale(1) rotate(0deg);
     }
 }
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(-30px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.animate-bounce-in {
+    animation: bounce-in 0.5s ease-out;
+}

@@ -16,28 +16,32 @@
         <!-- Navigation -->
         <nav class="max-w-6xl mx-auto mb-8">
             <div
-                class="flex justify-between items-center bg-gradient-to-r from-blue-600 to-cyan-500 p-6 rounded-2xl shadow-lg"
+                class="flex flex-col md:flex-row md:justify-between items-center bg-gradient-to-r from-blue-600 to-cyan-500 p-4 md:p-6 rounded-2xl shadow-lg"
             >
-                <h2 class="text-5xl font-bold text-white">Portfolio</h2>
-                <ul class="flex space-x-6">
+                <h2 class="text-2xl md:text-5xl font-bold text-white">
+                    Portfolio
+                </h2>
+                <ul
+                    class="flex flex-wrap gap-4 mt-4 md:mt-0 md:space-x-6 items-center"
+                >
                     <li>
                         <a
                             href="index.html"
-                            class="text-white hover:text-cyan-200 transition text-lg"
+                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
                             >Home</a
                         >
                     </li>
                     <li>
                         <a
                             href="about.html"
-                            class="text-white hover:text-cyan-200 transition text-lg"
+                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
                             >About</a
                         >
                     </li>
                     <li>
                         <a
                             href="contact.html"
-                            class="text-white hover:text-cyan-200 transition text-lg"
+                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
                             >Contact</a
                         >
                     </li>
@@ -96,7 +100,7 @@
                     <a
                         href="https://drive.google.com/file/d/1lhyzOO9XxF2GYehGHoZbaoBHCgzFTypc/view?usp=sharing"
                         target="_blank"
-                        class="bg-cyan-500 text-white  px-6 py-2 rounded-lg font-bold hover:bg-cyan-600 transition"
+                        class="bg-cyan-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-cyan-600 transition"
                         >Download Resume</a
                     >
                 </div>
@@ -129,105 +133,111 @@
             <!-- Skills Section -->
             <div class="md:col-span-6 bento-card p-8">
                 <h2 class="text-3xl font-bold mb-6">Skills & Technologies</h2>
-                <div class="grid grid-cols-3 gap-3">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     <div
-                        class="bg-gradient-to-r from-orange-400 to-red-500 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-orange-400 to-red-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
                         <i
-                            class="fab fa-js-square text-white text-2xl mr-2"
+                            class="fab fa-js-square text-white text-2xl sm:mr-2"
                         ></i>
                         <span class="text-white font-semibold text-sm"
                             >JavaScript</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-blue-500 to-blue-700 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-blue-500 to-blue-700 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
-                        <i class="fab fa-node-js text-white text-2xl mr-2"></i>
+                        <i
+                            class="fab fa-node-js text-white text-2xl sm:mr-2"
+                        ></i>
                         <span class="text-white font-semibold text-sm"
                             >Node.js</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-cyan-400 to-blue-600 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-cyan-400 to-blue-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
-                        <i class="fab fa-react text-white text-2xl mr-2"></i>
+                        <i class="fab fa-react text-white text-2xl sm:mr-2"></i>
                         <span class="text-white font-semibold text-sm"
                             >React</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-cyan-500 to-indigo-600 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-cyan-500 to-indigo-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
                         <i
-                            class="fas fa-strikethrough text-white text-2xl mr-2"
+                            class="fas fa-strikethrough text-white text-2xl sm:mr-2"
                         ></i>
                         <span class="text-white font-semibold text-sm"
                             >TypeScript</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-violet-400 to-purple-600 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-violet-400 to-purple-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
-                        <i class="fab fa-python text-white text-2xl mr-2"></i>
+                        <i
+                            class="fab fa-python text-white text-2xl sm:mr-2"
+                        ></i>
                         <span class="text-white font-semibold text-sm"
                             >Python</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-red-400 to-red-600 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-red-400 to-red-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
-                        <i class="fab fa-c text-white text-2xl mr-2"></i>
+                        <i class="fab fa-c text-white text-2xl sm:mr-2"></i>
                         <span class="text-white font-semibold text-sm"
                             >C++</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-orange-400 to-yellow-500 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-orange-400 to-yellow-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
-                        <i class="fab fa-html5 text-white text-2xl mr-2"></i>
+                        <i class="fab fa-html5 text-white text-2xl sm:mr-2"></i>
                         <span class="text-white font-semibold text-sm"
                             >HTML</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-blue-400 to-cyan-500 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-blue-400 to-cyan-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
-                        <i class="fab fa-css3-alt text-white text-2xl mr-2"></i>
+                        <i
+                            class="fab fa-css3-alt text-white text-2xl sm:mr-2"
+                        ></i>
                         <span class="text-white font-semibold text-sm"
                             >CSS</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-green-400 to-teal-600 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-green-400 to-teal-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
-                        <i class="fas fa-leaf text-white text-2xl mr-2"></i>
+                        <i class="fas fa-leaf text-white text-2xl sm:mr-2"></i>
                         <span class="text-white font-semibold text-sm"
                             >MongoDB</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-cyan-400 to-blue-500 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-cyan-400 to-blue-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
-                        <i class="fas fa-wind text-white text-2xl mr-2"></i>
+                        <i class="fas fa-wind text-white text-2xl sm:mr-2"></i>
                         <span class="text-white font-semibold text-sm"
                             >Tailwind</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-purple-400 to-purple-600 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-purple-400 to-purple-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
                         <i
-                            class="fas fa-microscope text-white text-2xl mr-2"
+                            class="fas fa-microscope text-white text-2xl sm:mr-2"
                         ></i>
                         <span class="text-white font-semibold text-sm"
                             >Playwright</span
                         >
                     </div>
                     <div
-                        class="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-xl text-center flex items-center justify-center"
+                        class="bg-gradient-to-r from-yellow-400 to-orange-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
                     >
-                        <i class="fas fa-flask text-white text-2xl mr-2"></i>
+                        <i class="fas fa-flask text-white text-2xl sm:mr-2"></i>
                         <span class="text-white font-semibold text-sm"
                             >Selenium</span
                         >
@@ -245,8 +255,8 @@
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-3">Discord Bot</h3>
                     <p class="text-gray-300 mb-4">
-                        A Discord bot with various utility commands
-                        including math operations, reminders, translations, and
+                        A Discord bot with various utility commands including
+                        math operations, reminders, translations, and
                         note-taking capabilities. The bot supports both slash
                         commands and prefix commands.
                     </p>
@@ -275,9 +285,7 @@
                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform"
                 />
                 <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-3">
-                        Portfolio Website
-                    </h3>
+                    <h3 class="text-2xl font-bold mb-3">Portfolio Website</h3>
                     <p class="text-gray-300 mb-4">
                         A personal portfolio website showcasing projects,
                         skills, and experience. Built with modern web
@@ -311,7 +319,9 @@
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">Web Scraper</h3>
                     <p class="text-gray-300 text-sm mb-3">
-                        A production-ready web scraping boilerplate with complete Page Object Model, error handling, and structured output.
+                        A production-ready web scraping boilerplate with
+                        complete Page Object Model, error handling, and
+                        structured output.
                     </p>
                     <div class="flex flex-wrap gap-1">
                         <span
@@ -338,9 +348,12 @@
                     class="w-full h-40 object-cover group-hover:scale-105 transition-transform"
                 />
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">E-Commerce Automation</h3>
+                    <h3 class="text-xl font-bold mb-2">
+                        E-Commerce Automation
+                    </h3>
                     <p class="text-gray-300 text-sm mb-3">
-                        This is a professional-grade test automation framework designed for web application testing.
+                        This is a professional-grade test automation framework
+                        designed for web application testing.
                     </p>
                     <div class="flex flex-wrap gap-1">
                         <span
@@ -548,9 +561,8 @@
                         <form
                             name="contact"
                             method="POST"
-                            netlify
+                            data-netlify="true"
                             netlify-honeypot="bot-field"
-                            action="success.html"
                             class="space-y-6"
                         >
                             <input type="hidden" name="bot-field" />

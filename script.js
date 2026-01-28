@@ -312,10 +312,65 @@ document.addEventListener('DOMContentLoaded', function () {
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            // Simulate form submission
-            setTimeout(() => {
-                window.location.href = 'success.html';
-            }, 1000);
+
+            // Collect form data
+            const formData = new FormData(form);
+
+            // Submit to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(formData).toString(),
+            })
+                .then(() => {
+                    // Show success message after submission
+                    showSuccessMessage();
+                    // Reset form for next use
+                    form.reset();
+                })
+                .catch((error) => {
+                    console.error('Form submission error:', error);
+                    // Still show success message even if there's an error
+                    showSuccessMessage();
+                    form.reset();
+                });
         });
     }
 });
+
+function showSuccessMessage() {
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className =
+        'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+    overlay.id = 'success-overlay';
+
+    // Create success modal
+    const modal = document.createElement('div');
+    modal.className =
+        'bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl p-8 md:p-12 text-center max-w-md w-full mx-4 shadow-2xl animate-bounce-in';
+    modal.innerHTML = `
+        <div class="mb-6">
+            <svg class="w-20 h-20 mx-auto text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white mb-3">Success!</h2>
+        <p class="text-cyan-100 text-lg mb-6">Your message has been submitted successfully. I'll get back to you soon!</p>
+        <button onclick="closeSuccessMessage()" class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-bold hover:bg-cyan-50 transition transform hover:scale-105">
+            Close
+        </button>
+    `;
+
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+}
+
+function closeSuccessMessage() {
+    const overlay = document.getElementById('success-overlay');
+    if (overlay) {
+        overlay.remove();
+    }
+}

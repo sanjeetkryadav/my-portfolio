@@ -15,41 +15,34 @@
         <!-- Navigation -->
         <nav class="max-w-6xl mx-auto mb-8">
             <div
-                class="flex justify-between items-center bg-gradient-to-r from-blue-600 to-cyan-500 p-6 rounded-2xl shadow-lg"
+                class="flex flex-col md:flex-row md:justify-between items-center bg-gradient-to-r from-blue-600 to-cyan-500 p-4 md:p-6 rounded-2xl shadow-lg"
             >
-                <h2 class="text-5xl font-bold text-white">Portfolio</h2>
-                <ul class="flex space-x-6">
+                <h2 class="text-2xl md:text-5xl font-bold text-white">Portfolio</h2>
+                <ul class="flex flex-wrap gap-4 mt-4 md:mt-0 md:space-x-6 items-center">
                     <li>
                         <a
                             href="index.html"
-                            class="text-white hover:text-cyan-200 transition text-lg"
+                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
                             >Home</a
                         >
                     </li>
                     <li>
                         <a
                             href="about.html"
-                            class="text-white hover:text-cyan-200 transition text-lg"
+                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
                             >About</a
                         >
                     </li>
                     <li>
                         <a
                             href="contact.html"
-                            class="text-white hover:text-cyan-200 transition text-lg"
+                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
                             >Contact</a
                         >
                     </li>
                 </ul>
             </div>
         </nav>
-
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-8">
-                <h1 class="text-4xl font-bold mb-4">Get In Touch</h1>
-                <p class="text-gray-700 text-lg">
-                    I'd love to hear from you. Send me a message and I'll
-                    respond as soon as possible.
                 </p>
             </div>
 
@@ -118,9 +111,8 @@
                     <form
                         name="contact"
                         method="POST"
-                        netlify
+                        data-netlify="true"
                         netlify-honeypot="bot-field"
-                        action="success.html"
                         class="space-y-4"
                     >
                         <input type="hidden" name="bot-field" />
@@ -182,5 +174,6 @@
                 </div>
             </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>
