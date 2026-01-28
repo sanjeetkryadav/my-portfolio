@@ -312,30 +312,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-
-            // Collect form data
-            const formData = new FormData(form);
-
-            // Submit to Netlify
-            fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams(formData).toString(),
-            })
-                .then(() => {
-                    // Show success message after submission
-                    showSuccessMessage();
-                    // Reset form for next use
-                    form.reset();
-                })
-                .catch((error) => {
-                    console.error('Form submission error:', error);
-                    // Still show success message even if there's an error
-                    showSuccessMessage();
-                    form.reset();
-                });
+            // Show success message
+            showSuccessMessage();
+            // Reset form for next use
+            form.reset();
+            // Netlify still processes submission via data-netlify attribute
         });
     }
 });
