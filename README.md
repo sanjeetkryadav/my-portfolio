@@ -221,11 +221,6 @@ Potential improvements:
 - **Email**: sanjeety00@gmail.com
 - **GitHub**: [sanjeetkryadav](https://github.com/sanjeetkryadav)
 - **LinkedIn**: [sanjeet786](https://www.linkedin.com/in/sanjeet786/)
-- **Instagram**: Check social links in portfolio
-
-## 📄 License
-
-This portfolio is open source and available for personal and commercial use.
 
 ## 🙏 Credits
 
