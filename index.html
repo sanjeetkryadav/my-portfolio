@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Developer Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="p-4 md:p-10">
+        <!-- Navigation -->
+        <nav class="max-w-6xl mx-auto mb-8">
+            <div
+                class="flex justify-between items-center bg-gradient-to-r from-blue-600 to-cyan-500 p-6 rounded-2xl shadow-lg"
+            >
+                <h2 class="text-5xl font-bold text-white">Portfolio</h2>
+                <ul class="flex space-x-6">
+                    <li>
+                        <a
+                            href="index.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="about.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="contact.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Hero Section -->
+            <div class="md:col-span-12 bento-card p-12 text-center">
+                <div
+                    class="flex flex-col md:flex-row items-center justify-center mb-8"
+                >
+                    <img
+                        src="https://picsum.photos/150/150?random=1"
+                        alt="Profile"
+                        class="w-32 h-32 rounded-full mb-6 md:mb-0 md:mr-8 border-4 border-blue-500"
+                    />
+                    <div>
+                        <h1
+                            class="text-2xl md:text-5xl lg:text-6xl font-bold mb-4"
+                        >
+                            Hi, I'm
+                            <span class="text-cyan-400"
+                                >Sanjeet Kumar Yadav</span
+                            >
+                        </h1>
+                        <p class="text-gray-300 text-[1rem] max-w-2xl mx-auto">
+                            I am a versatile Developer and aspiring AI Engineer
+                            with a passion for building data-driven
+                            applications. I am specialized in JavaScript,
+                            Python, SQL, MongoDB, React, Nodejs, and Scalable
+                            Systems.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-6 mt-8">
+                    <a
+                        href="https://github.com/sanjeetkryadav"
+                        target="_blank"
+                        class="text-cyan-400 hover:text-cyan-300 text-4xl"
+                        ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                        href="https://www.linkedin.com/in/sanjeet786/"
+                        target="_blank"
+                        class="text-cyan-400 hover:text-cyan-300 text-4xl"
+                        ><i class="fab fa-linkedin"></i
+                    ></a>
+                    <a
+                        href="https://instagram.com/"
+                        target="_blank"
+                        class="text-cyan-400 hover:text-cyan-300 text-4xl"
+                        ><i class="fab fa-instagram"></i
+                    ></a>
+                    <a
+                        href="https://drive.google.com/file/d/1lhyzOO9XxF2GYehGHoZbaoBHCgzFTypc/view?usp=sharing"
+                        target="_blank"
+                        class="bg-cyan-500 text-white  px-6 py-2 rounded-lg font-bold hover:bg-cyan-600 transition"
+                        >Download Resume</a
+                    >
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="md:col-span-6 bento-card p-8">
+                <h2 class="text-3xl font-bold mb-6">About Me</h2>
+                <p class="text-gray-300 text-lg mb-6">
+                    I'm a passionate full-stack developer with over 5 years of
+                    experience building web applications. I love creating
+                    user-friendly interfaces and robust backend systems. When
+                    I'm not coding, you can find me hiking, reading sci-fi
+                    novels, or experimenting with new technologies.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold text-blue-500">5+</h3>
+                        <p class="text-gray-600">Projects Completed</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold text-blue-500">
+                            Error 404
+                        </h3>
+                        <p class="text-gray-600">Years Experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="md:col-span-6 bento-card p-8">
+                <h2 class="text-3xl font-bold mb-6">Skills & Technologies</h2>
+                <div class="grid grid-cols-3 gap-3">
+                    <div
+                        class="bg-gradient-to-r from-orange-400 to-red-500 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i
+                            class="fab fa-js-square text-white text-2xl mr-2"
+                        ></i>
+                        <span class="text-white font-semibold text-sm"
+                            >JavaScript</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-blue-500 to-blue-700 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i class="fab fa-node-js text-white text-2xl mr-2"></i>
+                        <span class="text-white font-semibold text-sm"
+                            >Node.js</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-cyan-400 to-blue-600 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i class="fab fa-react text-white text-2xl mr-2"></i>
+                        <span class="text-white font-semibold text-sm"
+                            >React</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-cyan-500 to-indigo-600 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i
+                            class="fas fa-strikethrough text-white text-2xl mr-2"
+                        ></i>
+                        <span class="text-white font-semibold text-sm"
+                            >TypeScript</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-violet-400 to-purple-600 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i class="fab fa-python text-white text-2xl mr-2"></i>
+                        <span class="text-white font-semibold text-sm"
+                            >Python</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-red-400 to-red-600 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i class="fab fa-c text-white text-2xl mr-2"></i>
+                        <span class="text-white font-semibold text-sm"
+                            >C++</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-orange-400 to-yellow-500 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i class="fab fa-html5 text-white text-2xl mr-2"></i>
+                        <span class="text-white font-semibold text-sm"
+                            >HTML</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-blue-400 to-cyan-500 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i class="fab fa-css3-alt text-white text-2xl mr-2"></i>
+                        <span class="text-white font-semibold text-sm"
+                            >CSS</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-green-400 to-teal-600 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i class="fas fa-leaf text-white text-2xl mr-2"></i>
+                        <span class="text-white font-semibold text-sm"
+                            >MongoDB</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-cyan-400 to-blue-500 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i class="fas fa-wind text-white text-2xl mr-2"></i>
+                        <span class="text-white font-semibold text-sm"
+                            >Tailwind</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-purple-400 to-purple-600 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i
+                            class="fas fa-microscope text-white text-2xl mr-2"
+                        ></i>
+                        <span class="text-white font-semibold text-sm"
+                            >Playwright</span
+                        >
+                    </div>
+                    <div
+                        class="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-xl text-center flex items-center justify-center"
+                    >
+                        <i class="fas fa-flask text-white text-2xl mr-2"></i>
+                        <span class="text-white font-semibold text-sm"
+                            >Selenium</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="md:col-span-6 bento-card overflow-hidden group">
+                <img
+                    src="/discord.png"
+                    alt="Project Alpha"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform"
+                />
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-3">Discord Bot</h3>
+                    <p class="text-gray-300 mb-4">
+                        A Discord bot with various utility commands
+                        including math operations, reminders, translations, and
+                        note-taking capabilities. The bot supports both slash
+                        commands and prefix commands.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm"
+                            >Python</span
+                        >
+                        <span
+                            class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
+                            >discord.py</span
+                        >
+                        <span
+                            class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                            >pytz</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="md:col-span-6 bento-card overflow-hidden group">
+                <img
+                    src="/portfolio.jpg"
+                    alt="Project Beta"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform"
+                />
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-3">
+                        Portfolio Website
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        A personal portfolio website showcasing projects,
+                        skills, and experience. Built with modern web
+                        technologies to ensure responsiveness and a sleek
+                        design.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm"
+                            >JavaScript</span
+                        >
+                        <span
+                            class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
+                            >HTML</span
+                        >
+                        <span
+                            class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm"
+                            >CSS</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="md:col-span-4 bento-card overflow-hidden group">
+                <img
+                    src="/webscrape.png"
+                    alt="Project Gamma"
+                    class="w-full h-40 object-cover group-hover:scale-105 transition-transform"
+                />
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Web Scraper</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        A production-ready web scraping boilerplate with complete Page Object Model, error handling, and structured output.
+                    </p>
+                    <div class="flex flex-wrap gap-1">
+                        <span
+                            class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm"
+                            >TypeScript</span
+                        >
+                        <span
+                            class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-sm"
+                            >Nodejs</span
+                        >
+                        <span
+                            class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded-full text-sm"
+                            >PlayWright</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="md:col-span-4 bento-card overflow-hidden group">
+                <img
+                    src="/automation.png"
+                    alt="Project Delta"
+                    class="w-full h-40 object-cover group-hover:scale-105 transition-transform"
+                />
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">E-Commerce Automation</h3>
+                    <p class="text-gray-300 text-sm mb-3">
+                        This is a professional-grade test automation framework designed for web application testing.
+                    </p>
+                    <div class="flex flex-wrap gap-1">
+                        <span
+                            class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm"
+                            >Python</span
+                        >
+                        <span
+                            class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-sm"
+                            >ChromeDriver</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tic Tac Toe -->
+            <div class="md:col-span-4 bento-card p-6">
+                <h3 class="text-xl font-bold mb-4">Tic Tac Toe</h3>
+                <div
+                    id="game-board"
+                    class="grid grid-cols-3 w-[180px] mx-auto mb-4"
+                >
+                    <div class="cell" onclick="makeMove(0)"></div>
+                    <div class="cell" onclick="makeMove(1)"></div>
+                    <div class="cell" onclick="makeMove(2)"></div>
+                    <div class="cell" onclick="makeMove(3)"></div>
+                    <div class="cell" onclick="makeMove(4)"></div>
+                    <div class="cell" onclick="makeMove(5)"></div>
+                    <div class="cell" onclick="makeMove(6)"></div>
+                    <div class="cell" onclick="makeMove(7)"></div>
+                    <div class="cell" onclick="makeMove(8)"></div>
+                </div>
+                <p id="status" class="text-center text-sm text-gray-300 italic">
+                    X's Turn
+                </p>
+                <div id="confetti-container"></div>
+                <button
+                    onclick="resetGame()"
+                    class="mt-2 text-xs w-full text-gray-300 hover:text-white uppercase tracking-widest"
+                >
+                    Reset
+                </button>
+            </div>
+
+            <!-- Typing Speed Test -->
+            <div class="md:col-span-4 bento-card p-6">
+                <h3 class="text-xl font-bold mb-4">Typing Speed Test</h3>
+                <div
+                    id="sample-text-display"
+                    class="text-gray-300 mb-4 p-4 bg-gray-800 rounded-lg font-mono text-sm"
+                >
+                    The quick brown fox jumps over the lazy dog. Pack my box
+                    with five dozen liquor jugs.
+                </div>
+                <textarea
+                    id="typing-input"
+                    oninput="checkTyping()"
+                    class="typing-area w-full mb-4"
+                    rows="4"
+                    placeholder="Start typing here..."
+                ></textarea>
+                <div class="flex justify-between text-sm mb-3">
+                    <span
+                        ><span id="timer-emoji">⏱️</span>
+                        <span id="timer-display">0</span>s</span
+                    >
+                    <span id="wpm-display">0 WPM</span>
+                    <span id="accuracy-display">0% Accuracy</span>
+                </div>
+                <button
+                    id="typing-reset-btn"
+                    onclick="resetTypingTest()"
+                    class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-bold transition uppercase tracking-widest text-xs"
+                    style="display: none"
+                >
+                    Reset Test
+                </button>
+            </div>
+
+            <!-- Click Counter -->
+            <div class="md:col-span-4 bento-card p-6 counter-card">
+                <h3 class="text-xl font-bold mb-2 text-center">
+                    Click Counter
+                </h3>
+                <p class="text-sm text-gray-300 text-center mb-6">
+                    Total Clicks: <span id="top-total-clicks">0</span>
+                </p>
+                <div class="text-center relative py-4">
+                    <img
+                        id="click-image"
+                        src="click.png"
+                        alt="Click Me"
+                        class="w-32 h-32 mx-auto cursor-pointer transition-transform"
+                        onclick="onClickImageClick()"
+                    />
+                    <div id="plus-one-container"></div>
+                </div>
+                <div class="text-center mt-6 pt-4 border-t border-gray-700">
+                    <p class="text-lg font-semibold">
+                        Your Clicks:
+                        <span id="user-clicks" class="text-cyan-400">0</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Rock Paper Scissors Game -->
+            <div class="md:col-span-4 bento-card p-6">
+                <h3 class="text-xl font-bold mb-4 text-center">
+                    Rock Paper Scissors
+                </h3>
+                <div class="text-center mb-6">
+                    <div class="flex justify-around mb-4">
+                        <div>
+                            <p class="text-sm text-gray-400 mb-2">
+                                Your Choice
+                            </p>
+                            <p class="text-4xl">
+                                <span id="player-choice">-</span>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400 mb-2">
+                                Computer Choice
+                            </p>
+                            <p class="text-4xl">
+                                <span id="computer-choice">-</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p
+                        class="text-lg font-bold text-green-400 rps-result"
+                        id="result-message"
+                    >
+                        Make your move!
+                    </p>
+                </div>
+                <div class="flex justify-center gap-3 mb-6">
+                    <button
+                        onclick="playRPS('rock')"
+                        class="rps-btn text-3xl px-6 py-3 rounded-lg font-bold transition"
+                    >
+                        🪨
+                    </button>
+                    <button
+                        onclick="playRPS('paper')"
+                        class="rps-btn text-3xl px-6 py-3 rounded-lg font-bold transition"
+                    >
+                        📄
+                    </button>
+                    <button
+                        onclick="playRPS('scissors')"
+                        class="rps-btn text-3xl px-6 py-3 rounded-lg font-bold transition"
+                    >
+                        ✂️
+                    </button>
+                </div>
+                <div class="text-center text-sm bg-gray-800 rounded-lg p-3">
+                    <p class="font-semibold">
+                        You:
+                        <span id="player-score" class="text-cyan-400">0</span>
+                        | Computer:
+                        <span id="computer-score" class="text-orange-400"
+                            >0</span
+                        >
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="md:col-span-12 bento-card p-12">
+                <h2 class="text-4xl font-bold mb-8 text-center">
+                    Get In Touch
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
+                        <p class="text-gray-300 text-lg mb-8">
+                            I'm always interested in new opportunities and
+                            collaborations. Feel free to reach out if you'd like
+                            to work together or just say hello!
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i
+                                    class="fas fa-envelope text-blue-500 mr-4 text-xl"
+                                ></i>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <p class="text-gray-600">
+                                        sanjeety00@gmail.com
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i
+                                    class="fas fa-map-marker-alt text-red-500 mr-4 text-xl"
+                                ></i>
+                                <div>
+                                    <p class="font-semibold">Location</p>
+                                    <p class="text-gray-600">India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <form
+                            name="contact"
+                            method="POST"
+                            netlify
+                            netlify-honeypot="bot-field"
+                            action="success.html"
+                            class="space-y-6"
+                        >
+                            <input type="hidden" name="bot-field" />
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    class="bg-gray-100 border border-gray-300 rounded-lg p-4 text-black focus:ring-2 focus:ring-cyan-500 outline-none"
+                                    required
+                                />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    class="bg-gray-100 border border-gray-300 rounded-lg p-4 text-black focus:ring-2 focus:ring-cyan-500 outline-none"
+                                    required
+                                />
+                            </div>
+                            <textarea
+                                name="message"
+                                placeholder="Message"
+                                rows="6"
+                                class="w-full bg-gray-100 border border-gray-300 rounded-lg p-4 text-black focus:ring-2 focus:ring-cyan-500 outline-none"
+                                required
+                            ></textarea>
+                            <button
+                                type="submit"
+                                class="w-full bg-cyan-600 hover:bg-cyan-700 p-4 rounded-lg font-bold transition text-white text-lg"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

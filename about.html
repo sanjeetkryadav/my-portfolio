@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About - Developer Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="p-4 md:p-10">
+        <!-- Navigation -->
+        <nav class="max-w-6xl mx-auto mb-8">
+            <div
+                class="flex justify-between items-center bg-gradient-to-r from-blue-600 to-cyan-500 p-6 rounded-2xl shadow-lg"
+            >
+                <h2 class="text-5xl font-bold text-white">Portfolio</h2>
+                <ul class="flex space-x-6">
+                    <li>
+                        <a
+                            href="index.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="about.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="contact.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="max-w-5xl mx-auto">
+            <div class="bento-card p-8 mb-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <img
+                        src="https://picsum.photos/150/150?random=1"
+                        alt="Profile"
+                        class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 border-4 border-blue-500"
+                    />
+                    <div>
+                        <h1 class="text-4xl font-bold mb-4">About Me</h1>
+                        <p class="text-gray-700 text-lg mb-4">
+                            I'm a software developer who
+                            loves creating user-friendly interfaces. When I'm not coding, you can find
+                            me hiking, watching sci-fi novels, or taking care of my plants in my garden.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <h3 class="text-2xl font-bold text-blue-500">
+                                    5+
+                                </h3>
+                                <p class="text-gray-400">Projects Completed</p>
+                            </div>
+                            <div class="text-center">
+                                <h3 class="text-2xl font-bold text-green-500">
+                                    Error 404
+                                </h3>
+                                <p class="text-gray-400">Years Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bento-card p-6">
+                    <h3 class="text-xl font-bold mb-4">
+                        Skills & Technologies
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i
+                                class="fab fa-js-square text-yellow-500 mr-3"
+                            ></i>
+                            <span>JavaScript/TypeScript</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-react text-blue-500 mr-3"></i>
+                            <span>React & Next.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-node-js text-green-500 mr-3"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-python text-blue-600 mr-3"></i>
+                            <span>Python & Django</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-database text-blue-600 mr-3"></i>
+                            <span>MySQL & MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card p-6">
+                    <h3 class="text-xl font-bold mb-4">Interests</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Machine Learning & AI</li>
+                        <li>• Automation</li>
+                        <li>• Open Source Contributions</li>
+                        <li>• BlockChain</li>
+                        <li>• Cloud Computing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

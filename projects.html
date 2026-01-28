@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Projects - Developer Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="p-4 md:p-10">
+        <!-- Navigation -->
+        <nav class="max-w-6xl mx-auto mb-8">
+            <div
+                class="flex justify-between items-center bg-gradient-to-r from-blue-600 to-cyan-500 p-6 rounded-2xl shadow-lg"
+            >
+                <h2 class="text-5xl font-bold text-white">Portfolio</h2>
+                <ul class="flex space-x-6">
+                    <li>
+                        <a
+                            href="index.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="about.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="projects.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >Projects</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="contact.html"
+                            class="text-white hover:text-cyan-200 transition text-lg"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-4xl font-bold mb-8 text-center">My Projects</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bento-card overflow-hidden group">
+                    <img
+                        src="https://picsum.photos/400/200?random=2"
+                        alt="Project Alpha"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2">
+                            Weather Dashboard
+                        </h4>
+                        <p class="text-gray-700 text-sm mb-4">
+                            Real-time weather tracking with beautiful
+                            visualizations using OpenWeather API and Chart.js.
+                        </p>
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-600 text-xs px-2 py-1 rounded"
+                                >React</span
+                            >
+                            <span class="bg-green-600 text-xs px-2 py-1 rounded"
+                                >Node.js</span
+                            >
+                            <span
+                                class="bg-purple-600 text-xs px-2 py-1 rounded"
+                                >Tailwind</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card overflow-hidden group">
+                    <img
+                        src="https://picsum.photos/400/200?random=3"
+                        alt="Project Beta"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2">
+                            E-commerce Platform
+                        </h4>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Full-stack e-commerce solution with Stripe payment
+                            integration and admin dashboard.
+                        </p>
+                        <div class="flex space-x-2">
+                            <span
+                                class="bg-yellow-600 text-xs px-2 py-1 rounded"
+                                >Next.js</span
+                            >
+                            <span class="bg-red-600 text-xs px-2 py-1 rounded"
+                                >MongoDB</span
+                            >
+                            <span
+                                class="bg-indigo-600 text-xs px-2 py-1 rounded"
+                                >Stripe</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card overflow-hidden group">
+                    <img
+                        src="https://picsum.photos/400/200?random=4"
+                        alt="Project Gamma"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2">
+                            Task Management App
+                        </h4>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Collaborative task manager with real-time updates
+                            and team features.
+                        </p>
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-500 text-xs px-2 py-1 rounded"
+                                >Vue.js</span
+                            >
+                            <span class="bg-gray-700 text-xs px-2 py-1 rounded"
+                                >Firebase</span
+                            >
+                            <span class="bg-teal-600 text-xs px-2 py-1 rounded"
+                                >Socket.io</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card overflow-hidden group">
+                    <img
+                        src="https://picsum.photos/400/200?random=5"
+                        alt="Project Delta"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2">AI Chatbot</h4>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Intelligent chatbot using NLP and machine learning
+                            for customer support.
+                        </p>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-500 text-xs px-2 py-1 rounded"
+                                >Python</span
+                            >
+                            <span
+                                class="bg-orange-600 text-xs px-2 py-1 rounded"
+                                >TensorFlow</span
+                            >
+                            <span class="bg-cyan-600 text-xs px-2 py-1 rounded"
+                                >Flask</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
