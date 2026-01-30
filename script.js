@@ -196,7 +196,7 @@ function resetTypingTest() {
     clearInterval(interval);
     document.getElementById('typing-input').value = '';
     document.getElementById('typing-input').disabled = false;
-    document.getElementById('typing-input').style.borderColor = '#ff69b4';
+    document.getElementById('typing-input').style.borderColor = '#00ffff';
     document.getElementById('timer-display').innerText = '0';
     document.getElementById('wpm-display').innerText = '0 WPM';
     document.getElementById('accuracy-display').innerText = '0% Accuracy';
