@@ -60,9 +60,11 @@ function triggerConfetti() {
 
 function resetGame() {
     board = ['', '', '', '', '', '', '', '', ''];
-    cells.forEach((cell) => {
+    cells.forEach((cell,index) => {
         cell.innerText = '';
         cell.classList.remove('winning-cell');
+        cell.onclick = () => makeMove(index);
+
     });
     currentPlayer = 'X';
     statusDisplay.innerText = "X's Turn";
