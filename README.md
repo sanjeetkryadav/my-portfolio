@@ -1,4 +1,4 @@
-# 🚀 Developer Portfolio - Sanjeet Kumar Yadav
+# 🚀 Portfolio - Sanjeet Kumar Yadav
 
 A modern, interactive developer portfolio website featuring a cyberpunk aesthetic with engaging games, typing speed test, and contact form integration.
 
@@ -47,7 +47,6 @@ portfolio/
 ├── index.html          # Main landing page
 ├── about.html          # About/About Me page
 ├── contact.html        # Contact page with form
-├── success.html        # Form submission success page
 ├── script.js           # Game logic and interactive features
 ├── style.css           # Custom styles and animations
 ├── click.png           # Click counter game image

@@ -121,69 +121,7 @@ body {
     }
 }
 
-/* 2048 Game Styles */
-.tile {
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-    color: #ffffff;
-    transition: all 0.2s;
-}
-.tile-2 {
-    background: #eee4da;
-    color: #776e65;
-}
-.tile-4 {
-    background: #ede0c8;
-    color: #776e65;
-}
-.tile-8 {
-    background: #f2b179;
-    color: #f9f6f2;
-}
-.tile-16 {
-    background: #f59563;
-    color: #f9f6f2;
-}
-.tile-32 {
-    background: #f67c5f;
-    color: #f9f6f2;
-}
-.tile-64 {
-    background: #f65e3b;
-    color: #f9f6f2;
-}
-.tile-128 {
-    background: #edcf72;
-    color: #f9f6f2;
-    font-size: 14px;
-}
-.tile-256 {
-    background: #edcc61;
-    color: #f9f6f2;
-    font-size: 14px;
-}
-.tile-512 {
-    background: #edc850;
-    color: #f9f6f2;
-    font-size: 14px;
-}
-.tile-1024 {
-    background: #edc53f;
-    color: #f9f6f2;
-    font-size: 12px;
-}
-.tile-2048 {
-    background: #edc22e;
-    color: #f9f6f2;
-    font-size: 12px;
-}
+
 #click-image {
     transition: transform 0.1s ease-out;
 }
@@ -211,11 +149,11 @@ body {
 .plus-one-text {
     position: absolute;
     font-weight: bold;
-    font-size: 24px;
-    color: #00ffff;
+    font-size: 20px;
+    color: #058c1e;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     pointer-events: none;
-    animation: floatUp 1s ease-out forwards;
+    animation: floatUp 1.5s ease-out forwards;
 }
 
 @keyframes floatUp {
