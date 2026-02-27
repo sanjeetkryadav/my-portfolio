@@ -19,6 +19,8 @@ jobs:
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
+          # Use 'deploy --prod' for the main branch, or just 'deploy' for previews
+          args: deploy --dir=./ --prod
           publish-dir: './'        # Since your index.html is in the root
           production-deploy: ${{ github.event_name == 'push' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
