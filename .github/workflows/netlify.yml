@@ -20,7 +20,7 @@ jobs:
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
 
-      - name: Deploy to Netlify
+      - name: Deploy to Netlify 
         run: netlify deploy --dir=. --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
