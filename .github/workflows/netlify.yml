@@ -3,9 +3,6 @@ name: Deploy to Netlify
 on:
   push:
     branches:
-      - main  # Set this to your default branch name
-  pull_request:
-    branches:
       - main
 
 jobs:
@@ -13,22 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Deploy to Netlify
-        uses: netlify/actions/cli@master
-        with:
-          # Use 'deploy --prod' for the main branch, or just 'deploy' for previews
-          args: deploy --dir=./ --prod
-          publish-dir: './'        # Since your index.html is in the root
-          production-deploy: ${{ github.event_name == 'push' }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwritable-pull-request-deploy-preview: true
+      - run: npm install -g netlify-cli
+
+      - run: netlify deploy --dir=. --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 5
