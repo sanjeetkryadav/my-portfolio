@@ -78,8 +78,6 @@ function checkTyping() {
         startTime = new Date().getTime();
         isTyping = true;
         timer = 0;
-        const resetBtn = document.getElementById('typing-reset-btn');
-        if (resetBtn) resetBtn.style.display = 'none';
         interval = setInterval(() => {
             timer++;
             updateTimerDisplay();
@@ -119,9 +117,7 @@ function updateSampleTextDisplay(input) {
 function endTypingTest() {
     testFinished = true;
     const inp = document.getElementById('typing-input');
-    const btn = document.getElementById('typing-reset-btn');
     if (inp) inp.disabled = true;
-    if (btn) btn.style.display = 'block';
     calculateResults(true);
 }
 
@@ -147,13 +143,11 @@ function resetTypingTest() {
     timer = 0; isTyping = false; testFinished = false;
     clearInterval(interval);
     const inp = document.getElementById('typing-input');
-    const btn = document.getElementById('typing-reset-btn');
     const wpm = document.getElementById('wpm-display');
     const acc = document.getElementById('accuracy-display');
     const tim = document.getElementById('timer-display');
     const disp = document.getElementById('sample-text-display');
     if (inp)  { inp.value = ''; inp.disabled = false; inp.style.borderColor = ''; }
-    if (btn)  btn.style.display = 'none';
     if (wpm)  wpm.innerText  = '0';
     if (acc)  acc.innerText  = '100%';
     if (tim)  tim.innerText  = '0';
@@ -195,14 +189,18 @@ const TERM_COMMANDS = {
         '',
         'Scroll to the <span class="tc-c">#projects</span> section &#x2191;',
     ],
-    contact: () => [
-        '<span class="tc-c">Contact Info</span>',
-        'LinkedIn  <span class="tc-m">linkedin.com/in/sanjeet786</span>',
-        'GitHub    <span class="tc-m">github.com/sanjeetkryadav</span>',
-        'Email     <span class="tc-m">via contact page</span>',
-        '',
-        '<span class="tc-g">Open to freelance &amp; full-time roles.</span>',
-    ],
+    contact: () => {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        return [
+            '<span class="tc-c">Contact Info</span>',
+            'Email     <span class="tc-m">sanjeety00@gmail.com</span>',
+            'Phone     <span class="tc-m">+91 9517XXXXXX</span>',
+            'Location  <span class="tc-m">India &#x1F1EE;&#x1F1F3; &middot; Remote-Friendly</span>',
+            '',
+            '<span class="tc-g">Scrolling to #contact section below...</span>',
+        ];
+    },
     date: () => {
         const now = new Date();
         return ['<span class="tc-c">' + now.toLocaleString('en-IN', {
@@ -324,11 +322,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Contact form (contact.html)
+    // Contact form
     const form = document.querySelector('form[name="contact"]');
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
+            const banner = document.getElementById('form-success');
+            if (banner) banner.style.display = 'flex';
             showSuccessMessage();
             form.reset();
         });
