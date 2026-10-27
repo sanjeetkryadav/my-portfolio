@@ -1,6 +1,6 @@
-// TIC TAC TOE LOGIC
+// ── TIC TAC TOE ─────────────────────────────────────────────────────────────
 let currentPlayer = 'X';
-let board = ['', '', '', '', '', '', '', '', ''];
+let board = ['','','','','','','','',''];
 const statusDisplay = document.getElementById('status');
 const cells = document.querySelectorAll('.cell');
 let winningIndices = null;
@@ -11,12 +11,12 @@ function makeMove(index) {
         cells[index].innerText = currentPlayer;
         const result = checkWin();
         if (result) {
-            statusDisplay.innerText = `${currentPlayer} Wins!`;
+            statusDisplay.innerText = `${currentPlayer} Wins! 🎉`;
             winningIndices = result;
             highlightWinningLine(result);
             triggerConfetti();
             lockBoard();
-        } else if (board.every((cell) => cell !== '')) {
+        } else if (board.every(c => c !== '')) {
             statusDisplay.innerText = 'Draw!';
         } else {
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
@@ -26,334 +26,325 @@ function makeMove(index) {
 }
 
 function checkWin() {
-    const winConditions = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6],
+    const wins = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6],
     ];
-    for (const cond of winConditions) {
-        if (cond.every((index) => board[index] === currentPlayer)) {
-            return cond;
-        }
+    for (const cond of wins) {
+        if (cond.every(i => board[i] === currentPlayer)) return cond;
     }
     return null;
 }
 
-function highlightWinningLine(winningIndices) {
-    winningIndices.forEach((index) => {
-        cells[index].classList.add('winning-cell');
-    });
+function highlightWinningLine(indices) {
+    indices.forEach(i => cells[i].classList.add('winning-cell'));
 }
 
 function triggerConfetti() {
-    confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-    });
+    if (typeof confetti === 'function') {
+        confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
+    }
 }
 
 function resetGame() {
-    board = ['', '', '', '', '', '', '', '', ''];
-    cells.forEach((cell,index) => {
+    board = ['','','','','','','','',''];
+    cells.forEach((cell, i) => {
         cell.innerText = '';
         cell.classList.remove('winning-cell');
-        cell.onclick = () => makeMove(index);
-
+        cell.onclick = () => makeMove(i);
     });
     currentPlayer = 'X';
-    statusDisplay.innerText = "X's Turn";
+    if (statusDisplay) statusDisplay.innerText = "X's Turn";
     winningIndices = null;
 }
 
 function lockBoard() {
-    cells.forEach((cell) => (cell.onclick = null));
+    cells.forEach(cell => cell.onclick = null);
 }
 
-// Typing Speed Test
+// ── TYPING SPEED TEST ────────────────────────────────────────────────────────
 let timer = 0;
 let interval;
 let isTyping = false;
 let testFinished = false;
-const sampleText =
-    'The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.';
+const sampleText = 'The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.';
 let startTime;
 const maxTime = 60;
 
 function checkTyping() {
     if (testFinished) return;
-
     if (!isTyping) {
         startTime = new Date().getTime();
         isTyping = true;
         timer = 0;
-        testFinished = false;
-        document.getElementById('typing-reset-btn').style.display = 'none';
+        const resetBtn = document.getElementById('typing-reset-btn');
+        if (resetBtn) resetBtn.style.display = 'none';
         interval = setInterval(() => {
             timer++;
             updateTimerDisplay();
-            if (timer >= maxTime) {
-                clearInterval(interval);
-                endTypingTest();
-            }
+            if (timer >= maxTime) { clearInterval(interval); endTypingTest(); }
         }, 1000);
     }
     const input = document.getElementById('typing-input').value;
     const sample = sampleText.substring(0, input.length);
-
-    // Update sample text display with color coding
     updateSampleTextDisplay(input);
-
-    if (input === sample) {
-        document.getElementById('typing-input').style.borderColor = '#00ff00';
-    } else {
-        document.getElementById('typing-input').style.borderColor = '#ff0000';
-    }
-
-    // Check if entire text has been typed correctly
-    if (input === sampleText) {
-        clearInterval(interval);
-        endTypingTest();
-    }
-
+    document.getElementById('typing-input').style.borderColor =
+        input === sample ? '#22c55e' : '#ef4444';
+    if (input === sampleText) { clearInterval(interval); endTypingTest(); }
     calculateResults();
 }
 
 function updateTimerDisplay() {
-    document.getElementById('timer-display').innerText = timer;
+    const el = document.getElementById('timer-display');
+    if (el) el.innerText = timer;
 }
 
 function updateSampleTextDisplay(input) {
     const displayDiv = document.getElementById('sample-text-display');
+    if (!displayDiv) return;
     let html = '';
-
     for (let i = 0; i < sampleText.length; i++) {
         if (i < input.length) {
-            // Character has been typed
-            if (input[i] === sampleText[i]) {
-                // Correct character - green
-                html += `<span style="color: #00ff00; background-color: rgba(0, 255, 0, 0.2);">${sampleText[i]}</span>`;
-            } else {
-                // Wrong character - red
-                html += `<span style="color: #ff0000; background-color: rgba(255, 0, 0, 0.2);">${sampleText[i]}</span>`;
-            }
+            html += input[i] === sampleText[i]
+                ? `<span style="color:#22c55e;background:rgba(34,197,94,.15)">${sampleText[i]}</span>`
+                : `<span style="color:#ef4444;background:rgba(239,68,68,.15)">${sampleText[i]}</span>`;
         } else {
-            // Character not yet typed - gray
-            html += `<span style="color: #808080;">${sampleText[i]}</span>`;
+            html += `<span style="color:#64748b">${sampleText[i]}</span>`;
         }
     }
-
     displayDiv.innerHTML = html;
 }
 
 function endTypingTest() {
     testFinished = true;
-    document.getElementById('typing-input').disabled = true;
-    document.getElementById('typing-reset-btn').style.display = 'block';
+    const inp = document.getElementById('typing-input');
+    const btn = document.getElementById('typing-reset-btn');
+    if (inp) inp.disabled = true;
+    if (btn) btn.style.display = 'block';
     calculateResults(true);
 }
 
 function calculateResults(isFinished = false) {
-    const input = document.getElementById('typing-input').value;
-    if (input.length === 0) {
-        document.getElementById('wpm-display').innerText = '0 WPM';
-        document.getElementById('accuracy-display').innerText = '0% Accuracy';
-        return;
-    }
-    const timeElapsed = Math.max(
-        (new Date().getTime() - startTime) / 1000 / 60,
-        0.016,
-    ); // at least 1 second to avoid infinity
-    const wordsTyped = input.split(' ').length;
-    const wpm = Math.round(wordsTyped / timeElapsed);
-    const correctChars = input
-        .split('')
-        .filter((char, i) => char === sampleText[i]).length;
-    const accuracy = Math.round((correctChars / input.length) * 100) || 0;
-    document.getElementById('wpm-display').innerText = `${wpm} WPM`;
-    document.getElementById('accuracy-display').innerText =
-        `${accuracy}% Accuracy`;
-
-    // Trigger confetti if test is finished and conditions are met
-    if (isFinished && wpm > 35 && accuracy > 95) {
-        confetti({
-            particleCount: 150,
-            spread: 70,
-            origin: { y: 0.6 },
-        });
+    const inp = document.getElementById('typing-input');
+    if (!inp) return;
+    const input = inp.value;
+    if (!input.length) return;
+    const elapsed = Math.max((new Date().getTime() - startTime) / 1000 / 60, 0.016);
+    const wpm = Math.round(input.split(' ').length / elapsed);
+    const correct = input.split('').filter((c, i) => c === sampleText[i]).length;
+    const acc = Math.round((correct / input.length) * 100) || 0;
+    const wpmEl = document.getElementById('wpm-display');
+    const accEl = document.getElementById('accuracy-display');
+    if (wpmEl) wpmEl.innerText = wpm;
+    if (accEl) accEl.innerText = acc + '%';
+    if (isFinished && wpm > 35 && acc > 95 && typeof confetti === 'function') {
+        confetti({ particleCount: 160, spread: 70, origin: { y: 0.6 } });
     }
 }
 
 function resetTypingTest() {
-    timer = 0;
-    isTyping = false;
-    testFinished = false;
+    timer = 0; isTyping = false; testFinished = false;
     clearInterval(interval);
-    document.getElementById('typing-input').value = '';
-    document.getElementById('typing-input').disabled = false;
-    document.getElementById('typing-input').style.borderColor = '#00ffff';
-    document.getElementById('timer-display').innerText = '0';
-    document.getElementById('wpm-display').innerText = '0 WPM';
-    document.getElementById('accuracy-display').innerText = '0% Accuracy';
-    document.getElementById('typing-reset-btn').style.display = 'none';
-
-    // Reset sample text display
-    const displayDiv = document.getElementById('sample-text-display');
-    displayDiv.innerHTML = sampleText;
-    displayDiv.style.color = '#a0aec0';
+    const inp = document.getElementById('typing-input');
+    const btn = document.getElementById('typing-reset-btn');
+    const wpm = document.getElementById('wpm-display');
+    const acc = document.getElementById('accuracy-display');
+    const tim = document.getElementById('timer-display');
+    const disp = document.getElementById('sample-text-display');
+    if (inp)  { inp.value = ''; inp.disabled = false; inp.style.borderColor = ''; }
+    if (btn)  btn.style.display = 'none';
+    if (wpm)  wpm.innerText  = '0';
+    if (acc)  acc.innerText  = '100%';
+    if (tim)  tim.innerText  = '0';
+    if (disp) { disp.innerHTML = sampleText; }
 }
 
-// Click Counter
-let userClicks = 0;
-let totalClicks = parseInt(localStorage.getItem('totalClicks')) || 0;
+// ── INTERACTIVE TERMINAL EMULATOR ────────────────────────────────────────────
+const TERM_COMMANDS = {
+    help: () => [
+        '<span class="tc-c">Available commands:</span>',
+        '  <span class="tc-y">whoami</span>    &mdash; About Sanjeet',
+        '  <span class="tc-y">skills</span>    &mdash; Tech stack',
+        '  <span class="tc-y">projects</span>  &mdash; Featured work',
+        '  <span class="tc-y">contact</span>   &mdash; Get in touch',
+        '  <span class="tc-y">github</span>    &mdash; Open GitHub profile',
+        '  <span class="tc-y">date</span>      &mdash; Current date &amp; time',
+        '  <span class="tc-y">clear</span>     &mdash; Clear terminal',
+    ],
+    whoami: () => [
+        '<span class="tc-c">Sanjeet Kumar Yadav</span>',
+        'Full-Stack Developer &middot; Automation Engineer &middot; AI Enthusiast',
+        'Location  <span class="tc-m">India &#x1F1EE;&#x1F1F3;</span>',
+        'Status    <span class="tc-g">&#x25CF; Open to Opportunities</span>',
+        'Stack     JS &middot; Python &middot; React &middot; Node &middot; TypeScript',
+    ],
+    skills: () => [
+        '<span class="tc-c">Tech Stack</span>',
+        '<span class="tc-g">Frontend</span>   React &middot; TypeScript &middot; HTML5 &middot; CSS3 &middot; Tailwind',
+        '<span class="tc-g">Backend</span>    Node.js &middot; Python &middot; Express &middot; MongoDB',
+        '<span class="tc-g">Automation</span> Playwright &middot; Selenium &middot; discord.py',
+        '<span class="tc-g">Tools</span>      Git &middot; VS Code &middot; Linux',
+    ],
+    projects: () => [
+        '<span class="tc-c">Featured Projects</span>',
+        '  <span class="tc-y">01</span> Discord Bot           Python &middot; discord.py',
+        '  <span class="tc-y">02</span> Portfolio Website      JS &middot; HTML5 &middot; CSS3',
+        '  <span class="tc-y">03</span> Web Scraper Framework  TypeScript &middot; Playwright',
+        '  <span class="tc-y">04</span> E-Commerce Automation  Python &middot; Selenium',
+        '',
+        'Scroll to the <span class="tc-c">#projects</span> section &#x2191;',
+    ],
+    contact: () => [
+        '<span class="tc-c">Contact Info</span>',
+        'LinkedIn  <span class="tc-m">linkedin.com/in/sanjeet786</span>',
+        'GitHub    <span class="tc-m">github.com/sanjeetkryadav</span>',
+        'Email     <span class="tc-m">via contact page</span>',
+        '',
+        '<span class="tc-g">Open to freelance &amp; full-time roles.</span>',
+    ],
+    date: () => {
+        const now = new Date();
+        return ['<span class="tc-c">' + now.toLocaleString('en-IN', {
+            weekday:'long', year:'numeric', month:'long',
+            day:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit',
+        }) + '</span>'];
+    },
+    github: () => {
+        setTimeout(() => window.open('https://github.com/sanjeetkryadav', '_blank'), 400);
+        return ['<span class="tc-g">Opening GitHub profile&#x2026;</span>'];
+    },
+};
 
-function incrementClick() {
-    userClicks++;
-    totalClicks++;
-    document.getElementById('user-clicks').innerText = userClicks;
-    document.getElementById('top-total-clicks').innerText = totalClicks;
-    document.getElementById('total-clicks').innerText = totalClicks;
-    localStorage.setItem('totalClicks', totalClicks);
+let termHistory = [];
+let termHistIdx = -1;
+
+function _termAppend(html, cls) {
+    const out = document.getElementById('term-output');
+    if (!out) return;
+    const div = document.createElement('div');
+    div.className = 'term-line' + (cls ? ' ' + cls : '');
+    div.innerHTML = html;
+    out.appendChild(div);
+    out.scrollTop = out.scrollHeight;
 }
 
-function onClickImageClick() {
-    // Add click animation to image
-    const clickImage = document.getElementById('click-image');
-    clickImage.classList.remove('click-animation');
-    // Trigger reflow to restart animation
-    void clickImage.offsetWidth;
-    clickImage.classList.add('click-animation');
-
-    // Create +1 floating text
-    createPlusOneText();
-
-    // Increment click counter
-    incrementClick();
+function termPrint(lines) {
+    lines.forEach(l => _termAppend(l === '' ? '&nbsp;' : l));
 }
 
-function createPlusOneText() {
-    const container = document.getElementById('plus-one-container');
-    const plusOne = document.createElement('div');
-    plusOne.className = 'plus-one-text';
-    plusOne.textContent = '+1';
-
-    // Generate random position around the image
-    const angle = Math.random() * Math.PI * 2;
-    const distance = 40 + Math.random() * 30; // Random distance from center
-    const x = Math.cos(angle) * distance;
-    const y = Math.sin(angle) * distance;
-
-    // Position it randomly around the image center
-    plusOne.style.left = `calc(50% + ${x}px)`;
-    plusOne.style.top = `calc(50% + ${y}px)`;
-    plusOne.style.transform = 'translate(-50%, -50%)';
-
-    container.appendChild(plusOne);
-
-    // Remove the element after animation completes
-    setTimeout(() => {
-        plusOne.remove();
-    }, 1000);
+function termEcho(cmd) {
+    _termAppend(
+        `<span class="term-prompt-inline">&#x279C; ~&nbsp;</span><span class="tc-w">${_esc(cmd)}</span>`,
+        'term-echo'
+    );
 }
 
-// Rock Paper Scissors Game
-let playerScore = 0;
-let computerScore = 0;
+function _esc(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
 
-function playRPS(playerChoice) {
-    const choices = ['rock', 'paper', 'scissors'];
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-
-    const choiceEmoji = {
-        rock: '🪨',
-        paper: '📄',
-        scissors: '✂️',
-    };
-
-    document.getElementById('player-choice').innerText =
-        choiceEmoji[playerChoice];
-    document.getElementById('computer-choice').innerText =
-        choiceEmoji[computerChoice];
-
-    let result = '';
-    if (playerChoice === computerChoice) {
-        result = "It's a Tie!";
-    } else if (
-        (playerChoice === 'rock' && computerChoice === 'scissors') ||
-        (playerChoice === 'paper' && computerChoice === 'rock') ||
-        (playerChoice === 'scissors' && computerChoice === 'paper')
-    ) {
-        result = 'You Win! 🎉';
-        playerScore++;
-    } else {
-        result = 'Computer Wins! 💻';
-        computerScore++;
+function termKeyDown(e) {
+    const inp = document.getElementById('term-input');
+    if (!inp) return;
+    if (e.key === 'Enter') {
+        const raw = inp.value.trim();
+        inp.value = '';
+        if (!raw) return;
+        termHistory.unshift(raw);
+        termHistIdx = -1;
+        termEcho(raw);
+        const cmd = raw.toLowerCase().split(' ')[0];
+        if (cmd === 'clear') {
+            const out = document.getElementById('term-output');
+            if (out) out.innerHTML = '';
+        } else if (TERM_COMMANDS[cmd]) {
+            termPrint(TERM_COMMANDS[cmd]());
+        } else {
+            termPrint([
+                `<span class="tc-r">command not found: ${_esc(cmd)}</span>`,
+                'Type <span class="tc-y">help</span> for available commands.',
+            ]);
+        }
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (termHistIdx < termHistory.length - 1) { termHistIdx++; inp.value = termHistory[termHistIdx]; }
+    } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (termHistIdx > 0) { termHistIdx--; inp.value = termHistory[termHistIdx]; }
+        else { termHistIdx = -1; inp.value = ''; }
+    } else if (e.key === 'Tab') {
+        e.preventDefault();
+        const partial = inp.value.toLowerCase();
+        const match = Object.keys(TERM_COMMANDS).find(k => k.startsWith(partial));
+        if (match) inp.value = match;
     }
-
-    const resultElement = document.getElementById('result-message');
-    resultElement.classList.remove('rps-result');
-    resultElement.innerText = result;
-    // Trigger animation
-    void resultElement.offsetWidth;
-    resultElement.classList.add('rps-result');
-
-    document.getElementById('player-score').innerText = playerScore;
-    document.getElementById('computer-score').innerText = computerScore;
 }
 
-// Initialize click counter display
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('top-total-clicks').innerText = totalClicks;
-
-    const form = document.querySelector('form[name="contact"]');
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Show success message
-            showSuccessMessage();
-            // Reset form for next use
-            form.reset();
-            // Netlify still processes submission via data-netlify attribute
-        });
-    }
-});
-
+// ── CONTACT FORM SUCCESS MODAL ───────────────────────────────────────────────
 function showSuccessMessage() {
-    // Create overlay
     const overlay = document.createElement('div');
-    overlay.className =
-        'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
     overlay.id = 'success-overlay';
+    overlay.style.cssText =
+        'position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:1000;backdrop-filter:blur(6px)';
 
-    // Create success modal
     const modal = document.createElement('div');
-    modal.className =
-        'bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl p-8 md:p-12 text-center max-w-md w-full mx-4 shadow-2xl animate-bounce-in';
+    modal.className = 'animate-bounce-in';
+    modal.style.cssText =
+        'background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:20px;padding:48px;text-align:center;max-width:380px;width:90%;box-shadow:0 0 80px rgba(34,197,94,.35)';
     modal.innerHTML = `
-        <div class="mb-6">
-            <svg class="w-20 h-20 mx-auto text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-        </div>
-        <h2 class="text-3xl font-bold text-white mb-3">Success!</h2>
-        <p class="text-cyan-100 text-lg mb-6">Your message has been submitted successfully. I'll get back to you soon!</p>
-        <button onclick="closeSuccessMessage()" class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-bold hover:bg-cyan-50 transition transform hover:scale-105">
-            Close
+        <div style="font-size:3.5rem;margin-bottom:16px">✅</div>
+        <h2 style="color:#fff;font-size:1.8rem;font-weight:900;margin-bottom:10px">Message Sent!</h2>
+        <p style="color:rgba(255,255,255,.85);margin-bottom:24px">I'll get back to you as soon as possible.</p>
+        <button onclick="closeSuccessMessage()"
+                style="background:#fff;color:#16a34a;padding:12px 32px;border-radius:999px;font-weight:700;border:none;cursor:pointer;font-size:.95rem;">
+          Close
         </button>
     `;
-
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
 }
 
 function closeSuccessMessage() {
     const overlay = document.getElementById('success-overlay');
-    if (overlay) {
-        overlay.remove();
-    }
+    if (overlay) overlay.remove();
 }
+
+// ── DOM READY ────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Terminal badge pills
+    document.querySelectorAll('.term-badge').forEach(badge => {
+        badge.addEventListener('click', () => {
+            const inp = document.getElementById('term-input');
+            if (!inp) return;
+            inp.value = badge.textContent.trim();
+            inp.focus();
+            termKeyDown({ key: 'Enter', preventDefault: () => {} });
+        });
+    });
+
+    // Contact form (contact.html)
+    const form = document.querySelector('form[name="contact"]');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            showSuccessMessage();
+            form.reset();
+        });
+    }
+
+    // About page — skill bar animation
+    const bars = document.querySelectorAll('.skill-bar-fill');
+    if (bars.length) {
+        const barObs = new IntersectionObserver(es => {
+            es.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.width = e.target.dataset.width;
+                    barObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        bars.forEach(bar => barObs.observe(bar));
+    }
+});

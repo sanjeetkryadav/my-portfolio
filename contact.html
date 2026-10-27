@@ -1,183 +1,213 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Contact Me</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body class="p-4 md:p-10">
-        <!-- Navigation -->
-        <nav class="max-w-6xl mx-auto mb-8">
-            <div
-                class="flex flex-col md:flex-row md:justify-between items-center bg-gradient-to-r from-blue-600 to-cyan-500 p-4 md:p-6 rounded-2xl shadow-lg"
-            >
-                <a href="index.html" class="inline-block">
-                    <h2 class="text-2xl md:text-5xl font-bold text-white">
-                        Portfolio
-                    </h2>
-                </a>
-                <ul class="flex flex-wrap gap-4 mt-4 md:mt-0 md:space-x-6 items-center">
-                    <li>
-                        <a
-                            href="index.html"
-                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
-                            >Home</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="about.html"
-                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
-                            >About Me</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="contact.html"
-                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
-                            >Contact Me</a
-                        >
-                    </li>
-                </ul>
-            </div>
-        </nav>
-                </p>
-            </div>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contact — Sanjeet Kumar Yadav</title>
+  <meta name="description" content="Get in touch with Sanjeet Kumar Yadav — Available for freelance, contract, and full-time developer roles."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="icon.svg" type="image/svg+xml"/>
+</head>
+<body>
+<div class="page-wrapper">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bento-card p-8">
-                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i
-                                class="fas fa-envelope text-blue-500 mr-4 text-xl"
-                            ></i>
-                            <div>
-                                <p class="font-semibold">Email</p>
-                                <p class="text-gray-400">
-                                    sanjeety00@gmail.com
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i
-                                class="fas fa-phone text-green-500 mr-4 text-xl"
-                            ></i>
-                            <div>
-                                <p class="font-semibold">Phone</p>
-                                <p class="text-gray-400">+91 9517XXXXXX</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i
-                                class="fas fa-map-marker-alt text-red-500 mr-4 text-xl"
-                            ></i>
-                            <div>
-                                <p class="font-semibold">Location</p>
-                                <p class="text-gray-400">India</p>
-                            </div>
-                        </div>
-                    </div>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SanjeetDev</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1OTpIrs8jrhl-DaaLJPksZF3koj2EMm14/view?usp=sharing" target="_blank" class="nav-cta"><i class="fas fa-download"></i> Resume</a></li>
+      </ul>
+    </div>
+  </nav>
 
-                    <div class="mt-8">
-                        <h4 class="font-semibold mb-4">Follow Me</h4>
-                        <div class="flex space-x-4">
-                            <a
-                                href="https://github.com/sanjeetkryadav"
-                                target="_blank"
-                                class="text-blue-500 hover:text-blue-400 text-2xl"
-                                ><i class="fab fa-github"></i
-                            ></a>
-                            <a
-                                href="https://www.linkedin.com/in/sanjeet786/"
-                                target="_blank"
-                                class="text-blue-400 hover:text-blue-300 text-2xl"
-                                ><i class="fab fa-linkedin"></i
-                            ></a>
-                            <a
-                                href="https://instagram.com/"
-                                target="_blank"
-                                class="text-blue-300 hover:text-blue-200 text-2xl"
-                                ><i class="fab fa-instagram"></i
-                            ></a>
-                        </div>
-                    </div>
-                </div>
+  <div class="bento-grid">
 
-                <div class="bento-card p-8">
-                    <h3 class="text-2xl font-bold mb-6">Send Message</h3>
-                    <form
-                        name="contact"
-                        method="POST"
-                        data-netlify="true"
-                        netlify-honeypot="bot-field"
-                        class="space-y-4"
-                    >
-                        <input type="hidden" name="bot-field" />
-                        <div>
-                            <label class="block text-sm font-semibold mb-2"
-                                >Name</label
-                            >
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                class="w-full bg-zinc-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2"
-                                >Email</label
-                            >
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="your.email@example.com"
-                                class="w-full bg-zinc-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2"
-                                >Subject</label
-                            >
-                            <input
-                                type="text"
-                                name="subject"
-                                placeholder="Message Subject"
-                                class="w-full bg-zinc-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2"
-                                >Message</label
-                            >
-                            <textarea
-                                name="message"
-                                placeholder="Your Message"
-                                rows="5"
-                                class="w-full bg-zinc-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
-                                required
-                            ></textarea>
-                        </div>
-                        <button
-                            type="submit"
-                            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 p-3 rounded-lg font-bold transition"
-                        >
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
+    <!-- ══ CONTACT HERO ══ -->
+    <div class="bento-card contact-hero">
+      <div class="orb orb1" style="opacity:.65;"></div>
+      <div class="orb orb2" style="opacity:.55;"></div>
+      <div style="position:relative;z-index:1;">
+        <div class="avail" style="margin:0 auto 14px;width:fit-content;"><span class="avail-dot"></span> Available for Work</div>
+        <h1>Let's <span class="grad-text">Connect</span></h1>
+        <p style="margin-top:10px;">Have a project in mind or just want to say hi? I'm always open to interesting conversations and new opportunities.</p>
+      </div>
+    </div>
+
+    <!-- ══ CONTACT INFO ══ -->
+    <div class="bento-card col-5 p-card reveal">
+      <span class="eyebrow"><span class="eyebrow-dot"></span> Reach Out</span>
+      <h2 class="h2" style="margin-bottom:20px;">Contact Information</h2>
+
+      <div class="contact-info-item">
+        <div class="ci-icon" style="background:rgba(0,229,255,.1);color:var(--cyan);"><i class="fas fa-envelope"></i></div>
+        <div>
+          <div class="ci-label">Email</div>
+          <div class="ci-value">sanjeety00@gmail.com</div>
         </div>
-        <script src="script.js"></script>
-    </body>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="ci-icon" style="background:rgba(34,197,94,.1);color:var(--green);"><i class="fas fa-phone"></i></div>
+        <div>
+          <div class="ci-label">Phone</div>
+          <div class="ci-value">+91 9517XXXXXX</div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="ci-icon" style="background:rgba(236,72,153,.1);color:var(--pink);"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="ci-label">Location</div>
+          <div class="ci-value">India 🇮🇳 · Remote-Friendly</div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="ci-icon" style="background:rgba(124,58,237,.1);color:var(--violet);"><i class="fas fa-clock"></i></div>
+        <div>
+          <div class="ci-label">Timezone</div>
+          <div class="ci-value">IST (UTC+5:30)</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3 class="h3" style="margin-bottom:14px;">Find Me Online</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="https://github.com/sanjeetkryadav" target="_blank"
+           style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg2);padding:10px 14px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--border);transition:var(--t);"
+           onmouseover="this.style.borderColor='var(--border-glow)';this.style.color='var(--fg)'"
+           onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--fg2)'">
+          <i class="fab fa-github" style="font-size:1.2rem;color:var(--fg);"></i>
+          <div>
+            <div style="font-size:.8rem;font-weight:700;color:var(--fg);">GitHub</div>
+            <div style="font-size:.72rem;">github.com/sanjeetkryadav</div>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square" style="margin-left:auto;font-size:.7rem;"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sanjeet786/" target="_blank"
+           style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg2);padding:10px 14px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--border);transition:var(--t);"
+           onmouseover="this.style.borderColor='var(--border-glow)';this.style.color='var(--fg)'"
+           onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--fg2)'">
+          <i class="fab fa-linkedin" style="font-size:1.2rem;color:#0a66c2;"></i>
+          <div>
+            <div style="font-size:.8rem;font-weight:700;color:var(--fg);">LinkedIn</div>
+            <div style="font-size:.72rem;">linkedin.com/in/sanjeet786</div>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square" style="margin-left:auto;font-size:.7rem;"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- ══ CONTACT FORM ══ -->
+    <div class="bento-card col-7 p-card reveal">
+      <span class="eyebrow"><span class="eyebrow-dot"></span> Send a Message</span>
+      <h2 class="h2" style="margin-bottom:20px;">Drop Me a Line</h2>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
+        <input type="hidden" name="bot-field"/>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" name="name" placeholder="Sanjeet Kumar" class="form-input" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" name="email" placeholder="you@example.com" class="form-input" required/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input type="text" name="subject" placeholder="Project Inquiry / Collaboration / Just Saying Hi" class="form-input" required/>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea name="message" placeholder="Tell me about your project, idea, or opportunity..." class="form-input" rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px;">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+
+      <div id="form-success" style="display:none;margin-top:16px;">
+        <div class="success-message">
+          <i class="fas fa-check-circle" style="font-size:1.8rem;margin-bottom:8px;display:block;"></i>
+          <strong>Message Sent!</strong><br/>
+          <span style="font-size:.88rem;opacity:.9;">Thanks for reaching out. I'll get back to you soon!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ QUICK HIRE CARD ══ -->
+    <div class="bento-card col-12 p-card reveal" style="text-align:center;background:linear-gradient(135deg,rgba(14,12,52,.97),rgba(5,8,28,.93));padding:44px 36px;position:relative;overflow:hidden;">
+      <div class="orb orb1" style="opacity:.4;"></div>
+      <div class="orb orb3" style="opacity:.4;"></div>
+      <div style="position:relative;z-index:1;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;letter-spacing:-.4px;margin-bottom:10px;">
+          Prefer a Quick Look? <span class="grad-text">Grab My Resume.</span>
+        </h2>
+        <p style="color:var(--fg2);font-size:.94rem;max-width:440px;margin:0 auto 24px;line-height:1.7;">
+          All my skills, projects, and experience — packaged neatly in one document.
+        </p>
+        <a href="https://drive.google.com/file/d/1OTpIrs8jrhl-DaaLJPksZF3koj2EMm14/view?usp=sharing"
+           target="_blank" class="btn btn-primary" style="margin:0 auto;">
+          <i class="fas fa-file-pdf"></i> View / Download Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="bento-card footer-card">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">SanjeetDev</div>
+          <p class="footer-copy">© 2026 Sanjeet Kumar Yadav. All rights reserved.</p>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com/sanjeetkryadav"       target="_blank" class="footer-soc"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sanjeet786/" target="_blank" class="footer-soc"><i class="fab fa-linkedin"></i></a>
+          <a href="https://instagram.com/"                   target="_blank" class="footer-soc"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /bento-grid -->
+</div><!-- /page-wrapper -->
+
+<script src="script.js"></script>
+<script>
+  const nav=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+  // Scroll reveal
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}
+  }),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // Form success feedback (Netlify handles actual POST; this intercepts for UX)
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    // Only intercept if not going to Netlify (local preview)
+    const isNetlify = this.getAttribute('data-netlify') === 'true';
+    if (!isNetlify) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+    // Otherwise let Netlify handle it; success overlay shown by script.js
+  });
+</script>
+</body>
 </html>

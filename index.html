@@ -1,782 +1,606 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sanjeet's Portfolio</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="icon" href="icon.svg" type="image/svg+xml" />
-    </head>
-    <body class="p-4 md:p-10">
-        <!-- Navigation -->
-        <nav class="max-w-6xl mx-auto mb-8">
-            <div
-                class="flex flex-col md:flex-row md:justify-between items-center bg-gradient-to-r from-blue-600 to-cyan-500 p-4 md:p-6 rounded-2xl shadow-lg"
-            >
-                <a href="index.html" class="inline-block">
-                    <h2 class="text-2xl md:text-5xl font-bold text-white">
-                        Portfolio
-                    </h2>
-                </a>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Sanjeet Kumar Yadav — Developer & AI Engineer</title>
+  <meta name="description" content="Full-stack Developer and aspiring AI Engineer specializing in JavaScript, Python, React, Node.js, and scalable systems."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="icon.svg" type="image/svg+xml"/>
+  <!-- ⚡ Flicker-free theme: runs before paint -->
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch(e){}
+    })();
+  </script>
+</head>
+<body>
 
-                <ul
-                    class="flex flex-wrap gap-4 mt-4 md:mt-0 md:space-x-6 items-center"
-                >
-                    <li>
-                        <a
-                            href="index.html"
-                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
-                            >Home</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="about.html"
-                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
-                            >About Me</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="contact.html"
-                            class="text-white hover:text-cyan-200 transition text-sm md:text-lg"
-                            >Contact Me</a
-                        >
-                    </li>
-                </ul>
-            </div>
-        </nav>
+  <!-- Custom cursor (desktop only) -->
+  <div class="cur-dot"  id="cur-dot"></div>
+  <div class="cur-ring" id="cur-ring"></div>
 
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">
-            <!-- Hero Section -->
-            <div class="md:col-span-12 bento-card p-12 text-center">
-                <div
-                    class="flex flex-col md:flex-row items-center justify-center mb-8"
-                >
-                    <img
-                        src="https://lh3.google.com/u/0/d/1-71513oT_JLGirxUcRNOp9t90nABh34j=w1920-h912-iv1?auditContext=forDisplay"
-                        alt="Profile"
-                        class="w-32 h-32 rounded-full mb-6 md:mb-0 md:mr-8 border-4 border-blue-500"
-                    />
-                    <div>
-                        <h1
-                            class="text-2xl md:text-5xl lg:text-6xl font-bold mb-4"
-                        >
-                            Hi, I'm
-                            <span class="text-cyan-400"
-                                >Sanjeet Kumar Yadav</span
-                            >
-                        </h1>
-                        <p class="text-gray-300 text-[1rem] max-w-2xl mx-auto">
-                            I am a versatile Developer and aspiring AI Engineer
-                            with a passion for building data-driven
-                            applications. I am specialized in JavaScript,
-                            Python, SQL, MongoDB, React, Nodejs, and Scalable
-                            Systems.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex justify-center space-x-6 mt-8">
-                    <a
-                        href="https://github.com/sanjeetkryadav"
-                        target="_blank"
-                        class="text-cyan-400 hover:text-cyan-300 text-4xl"
-                        ><i class="fab fa-github"></i
-                    ></a>
-                    <a
-                        href="https://www.linkedin.com/in/sanjeet786/"
-                        target="_blank"
-                        class="text-cyan-400 hover:text-cyan-300 text-4xl"
-                        ><i class="fab fa-linkedin"></i
-                    ></a>
-                    <a
-                        href="https://instagram.com/"
-                        target="_blank"
-                        class="text-cyan-400 hover:text-cyan-300 text-4xl"
-                        ><i class="fab fa-instagram"></i
-                    ></a>
-                    <a
-                        href="https://drive.google.com/file/d/1OTpIrs8jrhl-DaaLJPksZF3koj2EMm14/view?usp=sharing"
-                        target="_blank"
-                        class="bg-cyan-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-cyan-600 transition"
-                        >Download Resume</a
-                    >
-                </div>
-            </div>
+  <!-- Scroll progress bar -->
+  <div class="scroll-bar" id="scroll-bar"></div>
 
-            <!-- About Section -->
-            <div class="md:col-span-6 bento-card p-8">
-                <h2 class="text-3xl font-bold mb-6">About Me</h2>
-                <p class="text-gray-300 text-lg mb-6">
-                    I'm a passionate programmer. I love creating user-friendly
-                    interfaces. When I'm not coding, you can find me travelling,
-                    watching sci-fi movies, or experimenting with new
-                    technologies.
-                </p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="text-center">
-                        <h3 class="text-3xl font-bold text-blue-500">5+</h3>
-                        <p class="text-gray-600">Projects Completed</p>
-                    </div>
-                    <div class="text-center">
-                        <h3 class="text-3xl font-bold text-blue-500">
-                            10 months+
-                        </h3>
-                        <p class="text-gray-600">Years Experience</p>
-                    </div>
-                </div>
-            </div>
+  <!-- ══ NAVBAR ══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SanjeetDev</a>
 
-            <!-- Skills Section -->
-            <div class="md:col-span-6 bento-card p-8">
-                <h2 class="text-3xl font-bold mb-6">Skills & Technologies</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <div
-                        class="bg-gradient-to-r from-orange-400 to-red-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i
-                            class="fab fa-js-square text-white text-2xl sm:mr-2"
-                        ></i>
-                        <span class="text-white font-semibold text-sm"
-                            >JavaScript</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-blue-500 to-blue-700 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i
-                            class="fab fa-node-js text-white text-2xl sm:mr-2"
-                        ></i>
-                        <span class="text-white font-semibold text-sm"
-                            >Node.js</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-cyan-400 to-blue-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i class="fab fa-react text-white text-2xl sm:mr-2"></i>
-                        <span class="text-white font-semibold text-sm"
-                            >React</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-cyan-500 to-indigo-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i
-                            class="fas fa-strikethrough text-white text-2xl sm:mr-2"
-                        ></i>
-                        <span class="text-white font-semibold text-sm"
-                            >TypeScript</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-violet-400 to-purple-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i
-                            class="fab fa-python text-white text-2xl sm:mr-2"
-                        ></i>
-                        <span class="text-white font-semibold text-sm"
-                            >Python</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-red-400 to-red-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i class="fab fa-c text-white text-2xl sm:mr-2"></i>
-                        <span class="text-white font-semibold text-sm"
-                            >C++</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-orange-400 to-yellow-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i class="fab fa-html5 text-white text-2xl sm:mr-2"></i>
-                        <span class="text-white font-semibold text-sm"
-                            >HTML</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-blue-400 to-cyan-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i
-                            class="fab fa-css3-alt text-white text-2xl sm:mr-2"
-                        ></i>
-                        <span class="text-white font-semibold text-sm"
-                            >CSS</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-green-400 to-teal-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i class="fas fa-leaf text-white text-2xl sm:mr-2"></i>
-                        <span class="text-white font-semibold text-sm"
-                            >MongoDB</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-cyan-400 to-blue-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i class="fas fa-wind text-white text-2xl sm:mr-2"></i>
-                        <span class="text-white font-semibold text-sm"
-                            >Tailwind</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-purple-400 to-purple-600 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i
-                            class="fas fa-microscope text-white text-2xl sm:mr-2"
-                        ></i>
-                        <span class="text-white font-semibold text-sm"
-                            >Playwright</span
-                        >
-                    </div>
-                    <div
-                        class="bg-gradient-to-r from-yellow-400 to-orange-500 p-3 rounded-xl text-center flex flex-col sm:flex-row items-center justify-center gap-2"
-                    >
-                        <i class="fas fa-flask text-white text-2xl sm:mr-2"></i>
-                        <span class="text-white font-semibold text-sm"
-                            >Selenium</span
-                        >
-                    </div>
-                </div>
-            </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-            <!-- Project 1 -->
-            <div class="md:col-span-6 bento-card overflow-hidden group">
-                <img
-                    src="/discord.png"
-                    alt="Project Alpha"
-                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                />
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-3">Discord Bot</h3>
-                    <p class="text-gray-300 mb-4">
-                        A Discord bot with various utility commands including
-                        math operations, reminders, translations, and
-                        note-taking capabilities. The bot supports both slash
-                        commands and prefix commands.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm"
-                            >Python</span
-                        >
-                        <span
-                            class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
-                            >discord.py</span
-                        >
-                        <span
-                            class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                            >pytz</span
-                        >
-                    </div>
-                </div>
-            </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <span class="t-sun"><i class="fas fa-sun"></i></span>
+          <span class="t-moon"><i class="fas fa-moon"></i></span>
+        </button>
+        <a href="https://drive.google.com/file/d/1OTpIrs8jrhl-DaaLJPksZF3koj2EMm14/view?usp=sharing"
+           target="_blank" class="btn btn-primary nav-cta">
+          <i class="fas fa-download"></i> Resume
+        </a>
+      </div>
+    </div>
+  </nav>
 
-            <!-- Project 2 -->
-            <div class="md:col-span-6 bento-card overflow-hidden group">
-                <img
-                    src="/portfolio.jpg"
-                    alt="Project Beta"
-                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                />
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-3">Portfolio Website</h3>
-                    <p class="text-gray-300 mb-4">
-                        A personal portfolio website showcasing projects,
-                        skills, and experience. Built with modern web
-                        technologies to ensure responsiveness and a sleek
-                        design.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm"
-                            >JavaScript</span
-                        >
-                        <span
-                            class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
-                            >HTML</span
-                        >
-                        <span
-                            class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm"
-                            >CSS</span
-                        >
-                    </div>
-                </div>
-            </div>
+  <!-- ══ HERO ════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <!-- Ambient orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <!-- Background grid overlay -->
+    <div class="hero-grid-bg" aria-hidden="true"></div>
 
-            <!-- Project 3 -->
-            <div class="md:col-span-4 bento-card overflow-hidden group">
-                <img
-                    src="/webscrape.png"
-                    alt="Project Gamma"
-                    class="w-full h-40 object-cover group-hover:scale-105 transition-transform"
-                />
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Web Scraper</h3>
-                    <p class="text-gray-300 text-sm mb-3">
-                        A production-ready web scraping boilerplate with
-                        complete Page Object Model, error handling, and
-                        structured output.
-                    </p>
-                    <div class="flex flex-wrap gap-1">
-                        <span
-                            class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm"
-                            >TypeScript</span
-                        >
-                        <span
-                            class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-sm"
-                            >Nodejs</span
-                        >
-                        <span
-                            class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded-full text-sm"
-                            >PlayWright</span
-                        >
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="md:col-span-4 bento-card overflow-hidden group">
-                <img
-                    src="/automation.png"
-                    alt="Project Delta"
-                    class="w-full h-40 object-cover group-hover:scale-105 transition-transform"
-                />
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">
-                        E-Commerce Automation
-                    </h3>
-                    <p class="text-gray-300 text-sm mb-3">
-                        This is a professional-grade test automation framework
-                        designed for web application testing.
-                    </p>
-                    <div class="flex flex-wrap gap-1">
-                        <span
-                            class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm"
-                            >Python</span
-                        >
-                        <span
-                            class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-sm"
-                            >ChromeDriver</span
-                        >
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tic Tac Toe -->
-            <div class="md:col-span-4 bento-card p-6">
-                <h3 class="text-xl font-bold mb-4">Tic Tac Toe</h3>
-                <div
-                    id="game-board"
-                    class="grid grid-cols-3 w-[180px] mx-auto mb-4"
-                >
-                    <div class="cell" onclick="makeMove(0)"></div>
-                    <div class="cell" onclick="makeMove(1)"></div>
-                    <div class="cell" onclick="makeMove(2)"></div>
-                    <div class="cell" onclick="makeMove(3)"></div>
-                    <div class="cell" onclick="makeMove(4)"></div>
-                    <div class="cell" onclick="makeMove(5)"></div>
-                    <div class="cell" onclick="makeMove(6)"></div>
-                    <div class="cell" onclick="makeMove(7)"></div>
-                    <div class="cell" onclick="makeMove(8)"></div>
-                </div>
-                <p id="status" class="text-center text-sm text-gray-300 italic">
-                    X's Turn
-                </p>
-                <div id="confetti-container"></div>
-                <button
-                    onclick="resetGame()"
-                    class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-bold transition uppercase tracking-widest text-xs mt-4"
-                >
-                    Reset
-                </button>
-            </div>
-
-            <!-- Typing Speed Test -->
-            <div class="md:col-span-4 bento-card p-6">
-                <h3 class="text-xl font-bold mb-4">Typing Speed Test</h3>
-                <div
-                    id="sample-text-display"
-                    class="text-gray-300 mb-4 p-4 bg-gray-800 rounded-lg font-mono text-sm"
-                >
-                    The quick brown fox jumps over the lazy dog. Pack my box
-                    with five dozen liquor jugs.
-                </div>
-                <textarea
-                    id="typing-input"
-                    oninput="checkTyping()"
-                    class="typing-area w-full mb-4"
-                    rows="4"
-                    placeholder="Start typing here..."
-                ></textarea>
-                <div class="flex justify-between text-sm mb-3">
-                    <span
-                        ><span id="timer-emoji">⏱️</span>
-                        <span id="timer-display">0</span>s</span
-                    >
-                    <span id="wpm-display">0 WPM</span>
-                    <span id="accuracy-display">0% Accuracy</span>
-                </div>
-                <button
-                    id="typing-reset-btn"
-                    onclick="resetTypingTest()"
-                    class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-bold transition uppercase tracking-widest text-xs"
-                    style="display: none"
-                >
-                    Reset Test
-                </button>
-            </div>
-
-            <!-- Click Counter -->
-            <div class="md:col-span-4 bento-card p-6 counter-card">
-                <h3 class="text-xl font-bold mb-2 text-center">
-                    Click Counter
-                </h3>
-                <p class="text-sm text-gray-300 text-center mb-6">
-                    Click on the Box
-                </p>
-                <div class="text-center relative py-4">
-                    <img
-                        id="click-image"
-                        src="click.png"
-                        alt="Click Me"
-                        class="w-32 h-32 mx-auto cursor-pointer transition-transform"
-                        onclick="onClickImageClick()"
-                    />
-                    <div id="plus-one-container"></div>
-                </div>
-                <div class="text-center mt-6 pt-4 border-t border-gray-700">
-                    <p class="text-lg font-semibold">
-                        Your Clicks:
-                        <span id="user-clicks" class="text-cyan-400">0</span>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Rock Paper Scissors Game -->
-            <div class="md:col-span-4 bento-card p-6">
-                <h3 class="text-xl font-bold mb-4 text-center">
-                    Rock Paper Scissors
-                </h3>
-                <div class="text-center mb-6">
-                    <div class="flex justify-around mb-4">
-                        <div>
-                            <p class="text-sm text-gray-400 mb-2">
-                                Your Choice
-                            </p>
-                            <p class="text-4xl">
-                                <span id="player-choice">-</span>
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-400 mb-2">
-                                Computer Choice
-                            </p>
-                            <p class="text-4xl">
-                                <span id="computer-choice">-</span>
-                            </p>
-                        </div>
-                    </div>
-                    <p
-                        class="text-lg font-bold text-green-400 rps-result"
-                        id="result-message"
-                    >
-                        Make your move!
-                    </p>
-                </div>
-                <div class="flex justify-center gap-4 mb-6">
-                    <button
-                        onclick="playRPS('rock')"
-                        class="rps-btn text-3xl w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-lg font-bold transition bg-gray-700 hover:bg-gray-600 shadow-md"
-                    >
-                        🪨
-                    </button>
-                    <button
-                        onclick="playRPS('paper')"
-                        class="rps-btn text-3xl w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-lg font-bold transition bg-gray-700 hover:bg-gray-600 shadow-md"
-                    >
-                        📄
-                    </button>
-                    <button
-                        onclick="playRPS('scissors')"
-                        class="rps-btn text-3xl w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-lg font-bold transition bg-gray-700 hover:bg-gray-600 shadow-md"
-                    >
-                        ✂️
-                    </button>
-                </div>
-                <div class="text-center text-sm bg-gray-800 rounded-lg p-3">
-                    <p class="font-semibold">
-                        You:
-                        <span id="player-score" class="text-cyan-400">0</span>
-                        | Computer:
-                        <span id="computer-score" class="text-orange-400"
-                            >0</span
-                        >
-                    </p>
-                </div>
-            </div>
-
-            
-            <div class="md:col-span-12 bento-card p-8">
-                <h2 class="text-3xl font-bold mb-8 text-center">
-                    Trusted Client
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div
-                        class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all group"
-                    >
-                        <div class="flex text-yellow-400 mb-3 text-sm">
-                            <i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i>
-                        </div>
-                        <p class="text-gray-300 italic mb-4 leading-relaxed">
-                            "Sanjeet's ability to automate complex web scraping
-                            tasks saved our team dozens of hours every week.
-                            Highly professional!"
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold"
-                            >
-                                SS
-                            </div>
-                            <div>
-                                <div class="font-bold text-white leading-none">
-                                    Shashwat Srivastava
-                                </div>
-                                <div
-                                    class="text-xs text-cyan-400 mt-1 uppercase tracking-widest"
-                                >
-                                    Data Migration Consultant, SAP
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all group"
-                    >
-                        <div class="flex text-yellow-400 mb-3 text-sm">
-                            <i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i>
-                        </div>
-                        <p class="text-gray-300 italic mb-4 leading-relaxed">
-                            "The Discord bot he built is flawless. It’s fast,
-                            handles errors gracefully, and the custom features
-                            are exactly what we needed."
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold"
-                            >
-                                AK
-                            </div>
-                            <div>
-                                <div class="font-bold text-white leading-none">
-                                    Aman Kumar
-                                </div>
-                                <div
-                                    class="text-xs text-cyan-400 mt-1 uppercase tracking-widest"
-                                >
-                                    Community Manager
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all group"
-                    >
-                        <div class="flex text-yellow-400 mb-3 text-sm">
-                            <i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="text-gray-300 italic mb-4 leading-relaxed">
-                            "Impressive full-stack skills. He took our legacy
-                            CSS and turned it into a modern, responsive Tailwind
-                            masterpiece."
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center text-white font-bold"
-                            >
-                                A
-                            </div>
-                            <div>
-                                <div class="font-bold text-white leading-none">
-                                    Ayush
-                                </div>
-                                <div
-                                    class="text-xs text-cyan-400 mt-1 uppercase tracking-widest"
-                                >
-                                    Startup Founder, DebtCare Finance
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all group"
-                    >
-                        <div class="flex text-yellow-400 mb-3 text-sm">
-                            <i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i
-                            ><i class="fas fa-star"></i>
-                        </div>
-                        <p class="text-gray-300 italic mb-4 leading-relaxed">
-                            "Sanjeet is a problem solver. When we hit a wall
-                            with our Python automation, he found a workaround
-                            within hours."
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center text-white font-bold"
-                            >
-                                SM
-                            </div>
-                            <div>
-                                <div class="font-bold text-white leading-none">
-                                    Shivansh Mishra
-                                </div>
-                                <div
-                                    class="text-xs text-cyan-400 mt-1 uppercase tracking-widest"
-                                >
-                                    Startup Founder, Palak Enterprises
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <footer class="md:col-span-12 bento-card p-12 mt-8">
-                <div
-                    class="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-gray-700 pb-12"
-                >
-                    <div class="space-y-4">
-                        <h3
-                            class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
-                        >
-                            Sanjeet Dev
-                        </h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Building digital experiences with precision and a
-                            focus on performance. Always learning, always
-                            building.
-                        </p>
-                    </div>
-
-                    <div class="space-y-4">
-                        <h3 class="text-xl font-bold text-white">
-                            The Numbers
-                        </h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <p
-                                    class="text-cyan-500 font-mono text-2xl font-bold"
-                                >
-                                    500+
-                                </p>
-                                <p
-                                    class="text-gray-500 text-sm uppercase tracking-wider"
-                                >
-                                    Git Commits
-                                </p>
-                            </div>
-                            <div>
-                                <p
-                                    class="text-red-500 font-mono text-2xl font-bold"
-                                >
-                                    ∞
-                                </p>
-                                <p
-                                    class="text-gray-500 text-sm uppercase tracking-wider"
-                                >
-                                    Coffee Refills
-                                </p>
-                            </div>
-                            <div>
-                                <p
-                                    class="text-yellow-500 font-mono text-2xl font-bold"
-                                >
-                                    5+
-                                </p>
-                                <p
-                                    class="text-gray-500 text-sm uppercase tracking-wider"
-                                >
-                                    Projects
-                                </p>
-                            </div>
-                            <div>
-                                <p
-                                    class="text-green-500 font-mono text-2xl font-bold"
-                                >
-                                    1
-                                </p>
-                                <p
-                                    class="text-gray-500 text-sm uppercase tracking-wider"
-                                >
-                                    Happy Dev
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-4">
-                        <h3 class="text-xl font-bold text-white">
-                            Let's Hang Out
-                        </h3>
-                        <div class="flex space-x-6 text-2xl">
-                            <a
-                                href="https://github.com/sanjeetkryadav"
-                                class="text-gray-400 hover:text-white transition-colors"
-                                ><i class="fab fa-github"></i
-                            ></a>
-                            <a
-                                href="https://www.linkedin.com/in/sanjeet786/"
-                                class="text-gray-400 hover:text-blue-400 transition-colors"
-                                ><i class="fab fa-linkedin"></i
-                            ></a>
-                            <a
-                                href="https://instagram.com/"
-                                class="text-gray-400 hover:text-pink-400 transition-colors"
-                                ><i class="fab fa-instagram"></i
-                            ></a>
-                        </div>
-                        <p class="text-gray-500 text-sm italic">
-                            Open for collaborations and remote roles.
-                        </p>
-                    </div>
-                </div>
-
-                <div
-                    class="pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm"
-                >
-                    <p>© 2026 Sanjeet. All rights reserved.</p>
-                    <p class="mt-2 md:mt-0">Designed & Engineered by Sanjeet</p>
-                </div>
-            </footer>
+    <div class="hero-body wrap">
+      <!-- Left column: text -->
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="pulse-dot"></span> Open to New Opportunities
         </div>
 
-        <script src="script.js"></script>
-    </body>
+        <h1 class="hero-headline">
+          Hi,&nbsp;I'm<br>
+          <span class="display-name">Sanjeet<br><em>Kumar Yadav</em></span>
+        </h1>
+
+        <div class="hero-role-row">
+          <span class="role-cursor-wrap">
+            <span id="typewriter-text" class="role-text"></span><span class="cursor"></span>
+          </span>
+        </div>
+
+        <p class="hero-desc">
+          Versatile Developer &amp; aspiring AI Engineer with a passion for
+          building data-driven applications. Specialized in JavaScript,
+          Python, React, Node.js, and Scalable Systems.
+        </p>
+
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Let's Work Together
+          </a>
+          <a href="#projects" class="btn btn-ghost">
+            <i class="fas fa-folder-open"></i> View Projects
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/sanjeetkryadav"       target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sanjeet786/" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://instagram.com/"                  target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Right column: avatar + floating stats -->
+      <div class="hero-right">
+        <div class="avatar-frame">
+          <div class="avatar-ring"></div>
+          <img src="https://lh3.google.com/u/0/d/1-71513oT_JLGirxUcRNOp9t90nABh34j=w1920-h912-iv1?auditContext=forDisplay"
+               alt="Sanjeet Kumar Yadav" class="hero-avatar"
+               onerror="this.src='https://ui-avatars.com/api/?name=SK&background=07080f&color=00e5b4&size=300&bold=true'"/>
+        </div>
+
+        <div class="float-stats">
+          <div class="float-stat">
+            <span class="fstat-num">500<span class="fstat-plus">+</span></span>
+            <span class="fstat-lbl">Git Commits</span>
+          </div>
+          <div class="float-stat">
+            <span class="fstat-num">5<span class="fstat-plus">+</span></span>
+            <span class="fstat-lbl">Projects</span>
+          </div>
+          <div class="float-stat">
+            <span class="fstat-num">10<span class="fstat-unit">mo</span></span>
+            <span class="fstat-lbl">Experience</span>
+          </div>
+        </div>
+
+        <!-- Availability badge -->
+        <div class="avail-badge">
+          <span class="pulse-dot"></span> Available for Hire
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MARQUEE STRIP ════════════════════════════════════════ -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>JavaScript</span><span class="m-sep">✦</span>
+        <span>TypeScript</span><span class="m-sep">✦</span>
+        <span>Python</span><span class="m-sep">✦</span>
+        <span>React</span><span class="m-sep">✦</span>
+        <span>Node.js</span><span class="m-sep">✦</span>
+        <span>MongoDB</span><span class="m-sep">✦</span>
+        <span>Playwright</span><span class="m-sep">✦</span>
+        <span>Selenium</span><span class="m-sep">✦</span>
+        <span>Tailwind CSS</span><span class="m-sep">✦</span>
+        <span>C++</span><span class="m-sep">✦</span>
+        <span>HTML5</span><span class="m-sep">✦</span>
+        <span>Git</span><span class="m-sep">✦</span>
+        <span>Linux</span><span class="m-sep">✦</span>
+        <!-- Duplicate for seamless loop -->
+        <span>JavaScript</span><span class="m-sep">✦</span>
+        <span>TypeScript</span><span class="m-sep">✦</span>
+        <span>Python</span><span class="m-sep">✦</span>
+        <span>React</span><span class="m-sep">✦</span>
+        <span>Node.js</span><span class="m-sep">✦</span>
+        <span>MongoDB</span><span class="m-sep">✦</span>
+        <span>Playwright</span><span class="m-sep">✦</span>
+        <span>Selenium</span><span class="m-sep">✦</span>
+        <span>Tailwind CSS</span><span class="m-sep">✦</span>
+        <span>C++</span><span class="m-sep">✦</span>
+        <span>HTML5</span><span class="m-sep">✦</span>
+        <span>Git</span><span class="m-sep">✦</span>
+        <span>Linux</span><span class="m-sep">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT ════════════════════════════════════════════════ -->
+  <section class="about-section wrap reveal" id="about">
+    <div class="sec-header">
+      <span class="sec-label">About Me</span>
+      <h2 class="sec-title">Passionate about solving<br>problems through <em>code</em>.</h2>
+    </div>
+
+    <div class="about-split">
+      <!-- Left: Big stats -->
+      <div class="about-numbers">
+        <div class="big-stat">
+          <div class="big-num">500<sup>+</sup></div>
+          <div class="big-lbl">Git Commits</div>
+        </div>
+        <div class="big-stat">
+          <div class="big-num">5<sup>+</sup></div>
+          <div class="big-lbl">Projects Shipped</div>
+        </div>
+        <div class="big-stat">
+          <div class="big-num">10<small>mo</small></div>
+          <div class="big-lbl">Experience</div>
+        </div>
+      </div>
+
+      <!-- Right: Bio -->
+      <div class="about-bio">
+        <p class="bio-text">
+          I'm a passionate programmer who loves creating user-friendly interfaces
+          and building things that matter. When I'm not coding, you'll find me
+          travelling, watching sci-fi movies, or experimenting with new tech.
+          <strong>Always learning. Always shipping.</strong>
+        </p>
+
+        <div class="interest-tags">
+          <span class="itag">🌍 Travel</span>
+          <span class="itag">🚀 Sci-Fi</span>
+          <span class="itag">🤖 AI/ML</span>
+          <span class="itag">🧪 Open Source</span>
+          <span class="itag">☕ Coffee</span>
+        </div>
+
+        <div class="about-actions">
+          <a href="about.html" class="btn btn-ghost">
+            Full Story <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="https://drive.google.com/file/d/1OTpIrs8jrhl-DaaLJPksZF3koj2EMm14/view?usp=sharing"
+             target="_blank" class="btn btn-outline">
+            <i class="fas fa-file-alt"></i> Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ═══════════════════════════════════════════════ -->
+  <section class="skills-section wrap reveal" id="skills">
+    <div class="sec-header">
+      <span class="sec-label">Tech Stack</span>
+      <h2 class="sec-title">Skills &amp; Technologies</h2>
+    </div>
+
+    <div class="filter-tabs" role="tablist">
+      <button class="ftab active" data-filter="all"        role="tab">All</button>
+      <button class="ftab"        data-filter="frontend"   role="tab">Frontend</button>
+      <button class="ftab"        data-filter="backend"    role="tab">Backend</button>
+      <button class="ftab"        data-filter="automation" role="tab">Automation</button>
+      <button class="ftab"        data-filter="tools"      role="tab">Tools</button>
+    </div>
+
+    <div class="skills-grid" id="skills-grid">
+      <div class="skill-chip" data-cat="frontend"><i class="fab fa-js-square c-js"></i>JavaScript</div>
+      <div class="skill-chip" data-cat="frontend"><i class="fab fa-react c-react"></i>React</div>
+      <div class="skill-chip" data-cat="frontend"><i class="fas fa-code c-ts"></i>TypeScript</div>
+      <div class="skill-chip" data-cat="frontend"><i class="fab fa-html5 c-html"></i>HTML5</div>
+      <div class="skill-chip" data-cat="frontend"><i class="fab fa-css3-alt c-css"></i>CSS3</div>
+      <div class="skill-chip" data-cat="frontend"><i class="fas fa-wind c-tw"></i>Tailwind</div>
+      <div class="skill-chip" data-cat="backend"><i class="fab fa-node-js c-node"></i>Node.js</div>
+      <div class="skill-chip" data-cat="backend"><i class="fab fa-python c-py"></i>Python</div>
+      <div class="skill-chip" data-cat="backend"><i class="fas fa-copyright c-cpp"></i>C++</div>
+      <div class="skill-chip" data-cat="backend"><i class="fas fa-leaf c-mongo"></i>MongoDB</div>
+      <div class="skill-chip" data-cat="automation"><i class="fas fa-vial c-pw"></i>Playwright</div>
+      <div class="skill-chip" data-cat="automation"><i class="fas fa-flask c-sel"></i>Selenium</div>
+      <div class="skill-chip" data-cat="tools"><i class="fab fa-git-alt c-git"></i>Git</div>
+      <div class="skill-chip" data-cat="tools"><i class="fab fa-linux c-linux"></i>Linux</div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ═════════════════════════════════════════════ -->
+  <section class="projects-section wrap reveal" id="projects">
+    <div class="sec-header">
+      <span class="sec-label">Featured Work</span>
+      <h2 class="sec-title">Projects</h2>
+    </div>
+
+    <!-- Floating hover preview card (follows cursor) -->
+    <div class="proj-preview" id="proj-preview" aria-hidden="true">
+      <img id="pp-img" src="" alt=""/>
+      <div class="pp-body">
+        <div id="pp-title" class="pp-title"></div>
+        <div id="pp-tags"  class="pp-tags"></div>
+      </div>
+    </div>
+
+    <div class="proj-list">
+      <a class="proj-row"
+         data-img="discord.png"
+         data-tags="Python · discord.py · pytz"
+         href="https://github.com/sanjeetkryadav" target="_blank">
+        <span class="prow-num">01</span>
+        <div class="prow-body">
+          <span class="prow-name">Discord Bot</span>
+          <span class="prow-desc">Feature-rich bot with utility commands — math, reminders, translations, and note-taking.</span>
+        </div>
+        <span class="prow-stack">Python · discord.py</span>
+        <span class="prow-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+      </a>
+
+      <a class="proj-row"
+         data-img="portfolio.jpg"
+         data-tags="JavaScript · HTML5 · CSS3"
+         href="https://github.com/sanjeetkryadav" target="_blank">
+        <span class="prow-num">02</span>
+        <div class="prow-body">
+          <span class="prow-name">Portfolio Website</span>
+          <span class="prow-desc">Personal portfolio showcasing projects, skills, and experience with micro-animations.</span>
+        </div>
+        <span class="prow-stack">JavaScript · CSS3</span>
+        <span class="prow-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+      </a>
+
+      <a class="proj-row"
+         data-img="webscrape.png"
+         data-tags="TypeScript · Node.js · Playwright"
+         href="https://github.com/sanjeetkryadav" target="_blank">
+        <span class="prow-num">03</span>
+        <div class="prow-body">
+          <span class="prow-name">Web Scraper Framework</span>
+          <span class="prow-desc">Production-ready scraping boilerplate with Page Object Model and structured error handling.</span>
+        </div>
+        <span class="prow-stack">TypeScript · Playwright</span>
+        <span class="prow-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+      </a>
+
+      <a class="proj-row"
+         data-img="automation.png"
+         data-tags="Python · Selenium · ChromeDriver"
+         href="https://github.com/sanjeetkryadav" target="_blank">
+        <span class="prow-num">04</span>
+        <div class="prow-body">
+          <span class="prow-name">E-Commerce Automation</span>
+          <span class="prow-desc">Professional-grade test automation framework with structured suites and detailed reporting.</span>
+        </div>
+        <span class="prow-stack">Python · Selenium</span>
+        <span class="prow-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ PLAYGROUND ═══════════════════════════════════════════ -->
+  <section class="playground-section wrap reveal" id="playground">
+    <div class="sec-header">
+      <span class="sec-label">Interactive</span>
+      <h2 class="sec-title">Developer Playground</h2>
+      <p class="sec-sub">A little fun to break the monotony — jump in!</p>
+    </div>
+
+    <div class="pg-grid">
+
+      <!-- Terminal -->
+      <div class="pg-card pg-terminal">
+        <div class="pg-header">
+          <div class="pg-dots"><span class="pg-dot red"></span><span class="pg-dot yellow"></span><span class="pg-dot green"></span></div>
+          <span class="pg-title">Terminal <i class="fas fa-terminal"></i></span>
+        </div>
+        <div class="terminal-output" id="term-output">
+          <div class="term-line">
+            <span class="term-prompt-inline">➜ ~&nbsp;</span>
+            <span class="tc-c">Type <kbd>help</kbd> to explore</span>
+          </div>
+        </div>
+        <div class="terminal-input-row">
+          <span class="term-prompt-inline">➜ ~&nbsp;</span>
+          <input id="term-input" class="term-input" type="text"
+                 autocomplete="off" spellcheck="false"
+                 placeholder="enter command…"
+                 onkeydown="termKeyDown(event)"/>
+        </div>
+        <div class="term-hint">
+          <span class="term-badge">help</span>
+          <span class="term-badge">whoami</span>
+          <span class="term-badge">skills</span>
+          <span class="term-badge">projects</span>
+          <span class="term-badge">contact</span>
+          <span class="term-badge">clear</span>
+        </div>
+      </div>
+
+      <!-- Typing Speed Test -->
+      <div class="pg-card pg-typing">
+        <div class="pg-header">
+          <div class="pg-dots"><span class="pg-dot red"></span><span class="pg-dot yellow"></span><span class="pg-dot green"></span></div>
+          <span class="pg-title">Typing Speed <i class="fas fa-keyboard"></i></span>
+        </div>
+        <div id="sample-text-display">The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</div>
+        <textarea id="typing-input" oninput="checkTyping()" class="typing-area" rows="3" placeholder="Start typing here…"></textarea>
+        <div class="typing-stats-row">
+          <div class="tstat"><span id="timer-display">0</span><small>sec</small></div>
+          <div class="tstat accent"><span id="wpm-display">0</span><small>WPM</small></div>
+          <div class="tstat"><span id="accuracy-display">100%</span><small>acc</small></div>
+        </div>
+        <button id="typing-reset-btn" onclick="resetTypingTest()" class="game-btn" style="display:none;">↺ Try Again</button>
+      </div>
+
+      <!-- Tic Tac Toe -->
+      <div class="pg-card pg-ttt">
+        <div class="pg-header">
+          <div class="pg-dots"><span class="pg-dot red"></span><span class="pg-dot yellow"></span><span class="pg-dot green"></span></div>
+          <span class="pg-title">Tic Tac Toe <i class="fas fa-gamepad"></i></span>
+        </div>
+        <div id="game-board" class="ttt-grid">
+          <div class="cell" onclick="makeMove(0)"></div>
+          <div class="cell" onclick="makeMove(1)"></div>
+          <div class="cell" onclick="makeMove(2)"></div>
+          <div class="cell" onclick="makeMove(3)"></div>
+          <div class="cell" onclick="makeMove(4)"></div>
+          <div class="cell" onclick="makeMove(5)"></div>
+          <div class="cell" onclick="makeMove(6)"></div>
+          <div class="cell" onclick="makeMove(7)"></div>
+          <div class="cell" onclick="makeMove(8)"></div>
+        </div>
+        <p id="status" class="game-status">X's Turn</p>
+        <button onclick="resetGame()" class="game-btn">↺ Reset Board</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ═════════════════════════════════════════ -->
+  <section class="testi-section wrap reveal" id="testimonials">
+    <div class="sec-header">
+      <span class="sec-label">Testimonials</span>
+      <h2 class="sec-title">Trusted by Clients</h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Sanjeet's ability to automate complex web scraping tasks saved our team dozens of hours every week. Highly professional!"</p>
+        <div class="testi-author">
+          <div class="t-avatar" style="background:var(--accent2);">SS</div>
+          <div><div class="t-name">Shashwat Srivastava</div><div class="t-role">Data Migration Consultant, SAP</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"The Discord bot he built is flawless. Fast, handles errors gracefully, and the custom features are exactly what we needed."</p>
+        <div class="testi-author">
+          <div class="t-avatar" style="background:#8b5cf6;">AK</div>
+          <div><div class="t-name">Aman Kumar</div><div class="t-role">Community Manager</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★<span style="opacity:.3">★</span></div>
+        <p class="testi-text">"Impressive full-stack skills. He took our legacy CSS and turned it into a modern, responsive Tailwind masterpiece."</p>
+        <div class="testi-author">
+          <div class="t-avatar" style="background:var(--accent);color:#000;">A</div>
+          <div><div class="t-name">Ayush</div><div class="t-role">Startup Founder, DebtCare Finance</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Sanjeet is a problem solver. When we hit a wall with Python automation, he found a workaround within hours."</p>
+        <div class="testi-author">
+          <div class="t-avatar" style="background:#ef4444;">SM</div>
+          <div><div class="t-name">Shivansh Mishra</div><div class="t-role">Startup Founder, Palak Enterprises</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner wrap">
+      <div class="footer-top">
+        <div class="footer-brand">SanjeetDev</div>
+        <div class="footer-socials">
+          <a href="https://github.com/sanjeetkryadav"       target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sanjeet786/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+          <a href="https://instagram.com/"                  target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="about.html">Full Story</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Sanjeet Kumar Yadav — Designed &amp; Engineered with ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ SCRIPTS ═══════════════════════════════════════════════ -->
+  <script src="script.js"></script>
+  <script>
+    /* ── Theme toggle ─────────────────────────────────────── */
+    const themeBtn = document.getElementById('theme-toggle');
+    const applyTheme = (t) => {
+      document.documentElement.setAttribute('data-theme', t);
+      try { localStorage.setItem('theme', t); } catch(e){}
+    };
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      applyTheme(cur === 'dark' ? 'light' : 'dark');
+    });
+
+    /* ── Navbar scroll shadow ─────────────────────────────── */
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), {passive:true});
+
+    /* ── Scroll progress bar ──────────────────────────────── */
+    const scrollBar = document.getElementById('scroll-bar');
+    window.addEventListener('scroll', () => {
+      const pct = (scrollY / (document.body.scrollHeight - innerHeight)) * 100;
+      scrollBar.style.width = pct + '%';
+    }, {passive:true});
+
+    /* ── Typewriter ───────────────────────────────────────── */
+    const roles = ['Full-Stack Developer','Automation Engineer','AI Enthusiast','Problem Solver'];
+    let ri = 0, ci = 0, del = false;
+    const tw = document.getElementById('typewriter-text');
+    function type(){
+      const cur = roles[ri];
+      del ? tw.textContent = cur.slice(0,--ci) : tw.textContent = cur.slice(0,++ci);
+      if (!del && ci === cur.length){ del = true; setTimeout(type, 1900); return; }
+      if (del && ci === 0){ del = false; ri = (ri+1) % roles.length; }
+      setTimeout(type, del ? 52 : 88);
+    }
+    type();
+
+    /* ── Scroll reveal ────────────────────────────────────── */
+    const obs = new IntersectionObserver(
+      es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    /* ── Skills filter ────────────────────────────────────── */
+    document.querySelectorAll('.ftab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const f = tab.dataset.filter;
+        document.querySelectorAll('.skill-chip').forEach(chip => {
+          const show = f === 'all' || chip.dataset.cat === f;
+          chip.style.opacity     = show ? '1' : '0.2';
+          chip.style.transform   = show ? 'scale(1)' : 'scale(0.88)';
+          chip.style.pointerEvents = show ? 'auto' : 'none';
+        });
+      });
+    });
+
+    /* ── Project hover preview ────────────────────────────── */
+    const preview   = document.getElementById('proj-preview');
+    const ppImg     = document.getElementById('pp-img');
+    const ppTitle   = document.getElementById('pp-title');
+    const ppTags    = document.getElementById('pp-tags');
+    let mx = 0, my = 0, px = 0, py = 0, rafActive = false;
+
+    document.addEventListener('mousemove', e => { mx = e.clientX + 28; my = e.clientY - 80; });
+
+    function lerpPreview(){
+      px += (mx - px) * 0.13;
+      py += (my - py) * 0.13;
+      preview.style.left = px + 'px';
+      preview.style.top  = py + 'px';
+      if(rafActive) requestAnimationFrame(lerpPreview);
+    }
+
+    document.querySelectorAll('.proj-row').forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        ppImg.src         = row.dataset.img;
+        ppImg.alt         = row.querySelector('.prow-name').textContent;
+        ppTitle.textContent = row.querySelector('.prow-name').textContent;
+        ppTags.textContent  = row.dataset.tags;
+        preview.classList.add('active');
+        rafActive = true;
+        requestAnimationFrame(lerpPreview);
+      });
+      row.addEventListener('mouseleave', () => {
+        preview.classList.remove('active');
+        rafActive = false;
+      });
+    });
+
+    /* ── Custom cursor ────────────────────────────────────── */
+    const dot  = document.getElementById('cur-dot');
+    const ring = document.getElementById('cur-ring');
+    let dx = 0, dy = 0, rx = 0, ry = 0;
+
+    if (window.matchMedia('(pointer:fine)').matches) {
+      document.documentElement.classList.add('has-cursor');
+      document.addEventListener('mousemove', e => { dx = e.clientX; dy = e.clientY; });
+      (function animCursor(){
+        rx += (dx - rx) * 0.14; ry += (dy - ry) * 0.14;
+        dot.style.transform  = `translate(${dx-4}px,${dy-4}px)`;
+        ring.style.transform = `translate(${rx-18}px,${ry-18}px)`;
+        requestAnimationFrame(animCursor);
+      })();
+
+      const interactables = 'a,button,.skill-chip,.proj-row,.ftab,.term-badge';
+      document.querySelectorAll(interactables).forEach(el => {
+        el.addEventListener('mouseenter', () => { dot.classList.add('big'); ring.classList.add('big'); });
+        el.addEventListener('mouseleave', () => { dot.classList.remove('big'); ring.classList.remove('big'); });
+      });
+    }
+
+    /* ── Terminal badge pills ─────────────────────────────── */
+    document.querySelectorAll('.term-badge').forEach(badge => {
+      badge.addEventListener('click', () => {
+        const inp = document.getElementById('term-input');
+        if(!inp) return;
+        inp.value = badge.textContent.trim();
+        inp.focus();
+        termKeyDown({ key:'Enter', preventDefault:()=>{} });
+      });
+    });
+  </script>
+</body>
 </html>
